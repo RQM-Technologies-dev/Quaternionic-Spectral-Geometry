@@ -1,36 +1,78 @@
-# Anchored Spectral Geometry
+# The Manifold $M = S^3 \times \mathbb R$
 
-Anchored spectral geometry is an optional QSG extension. It is not required for the first formal core.
-
-## State Space
-
-The proposed anchored state space is
+The central QSG model is
 
 $$
-S^3 \times \mathbb R_s,
+M = S^3 \times \mathbb R.
 $$
 
-where $S^3 \cong SU(2)$ carries quaternionic orientation data and $s \in \mathbb R$ is an anchor coordinate.
+This is not an optional extension. It is the basic mathematical stage for QSG examples.
 
-## Anchor Coordinate
+## Coordinates
 
-The anchor coordinate $s$ is intended to track stabilization, localization, or selection of spectral structure.
+A point of $M$ is written
 
-At this stage, $s$ should be treated as a research-program coordinate. Any use of it should specify:
+$$
+(q,s),
+$$
 
-- what space it extends,
-- what operator depends on it,
-- what spectral data changes with it,
-- what is proved, computed, or conjectured.
+where $q \in S^3$ is a unit quaternion and $s \in \mathbb R$ is a real resonance coordinate.
 
-## Anchor Wells
+The quaternion coordinate can be written in rotor form:
 
-Anchor wells are proposed spectral selection or stabilization structures. Informally, an anchor well is a region in the anchor coordinate where spectral behavior becomes stable, selected, or locally coherent.
+$$
+q = \cos(\phi) + u\sin(\phi),
+$$
 
-This language is speculative until it is tied to explicit operators and spectra.
+where $u$ is a unit imaginary quaternion.
 
-## Relation To The First Formal Core
+## Hypersphere Geometry
 
-The first formal QSG core should not depend on anchors. It should first establish the quaternion-as-$M_2(\mathbb C)$ bridge, a toy $SU(2)$ state space, a candidate spectral operator, and explicit commutators.
+The $S^3$ coordinate carries:
 
-Anchors can be added later if the unanchored model is mathematically clear.
+- orientation,
+- rotor structure,
+- slice structure,
+- $SU(2)$ group action,
+- geodesic or great-circle motion.
+
+Slices $q = a + bI$ provide complex planes inside $\mathbb H$ and make it possible to compare local complex behavior with global quaternionic behavior.
+
+## Resonance Coordinate
+
+The real coordinate $s$ can represent:
+
+- resonance level,
+- anchor height,
+- spectral filtration,
+- deformation parameter,
+- well coordinate.
+
+It should be defined mathematically in each example rather than treated as a metaphor.
+
+## Spectral Wells
+
+A spectral well is a function, region, or operator term along the $s$ coordinate that selects or localizes spectral modes.
+
+In a toy model, this can be represented as a potential term
+
+$$
+V(s)
+$$
+
+inside a spectral operator such as
+
+$$
+D_M = D_{S^3} + D_s + V(s).
+$$
+
+## First Formal Core
+
+The first formal QSG core should establish:
+
+- the quaternion-as-$M_2(\mathbb C)$ bridge,
+- the model manifold $M = S^3 \times \mathbb R$,
+- a small algebra of observables on $M$,
+- a state space,
+- a candidate spectral operator,
+- explicit commutators.

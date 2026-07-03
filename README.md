@@ -1,32 +1,56 @@
 # Quaternionic Spectral Geometry
 
-Quaternionic Spectral Geometry (QSG) is a developing mathematical framework for studying geometric and physical systems whose relevant structure is not fully captured by scalar magnitude or complex phase alone, but by coupled phase, rotation, orientation, polarization, and coherence data represented through quaternionic/SU(2)-aware spectral structures.
+Quaternionic Spectral Geometry (QSG) is a developing mathematical framework for studying spectral, metric, phase, orientation, coherence, and resonance structures on quaternionic hypersphere spaces, with the basic model manifold
 
-QSG studies geometry, spectra, phase, rotation, orientation, polarization, coherence, and measurement using structures informed by unit quaternions, $S^3 \cong SU(2)$, spinors, spectral operators, and quaternionic coordinate data. Its first formal bridge should use the standard embedding $\mathbb H \hookrightarrow M_2(\mathbb C)$ rather than requiring native quaternionic Hilbert spaces at the start. That route keeps the early theory close to complex Hilbert spaces, complex matrices, and formalization ecosystems such as Lean/Mathlib.
+$$
+M = S^3 \times \mathbb R.
+$$
 
-## Why this repo exists
+Here $S^3$ is the unit-quaternion hypersphere, identified with $SU(2)$, and the $\mathbb R$ coordinate records a real resonance or anchor parameter. The first formal bridge uses the standard embedding $\mathbb H \hookrightarrow M_2(\mathbb C)$ so that quaternionic geometry can be studied through complex matrices, spinors, operators, and ordinary spectral constructions before any native quaternionic Hilbert-space machinery is required.
 
-This repository establishes a public canon for QSG: the name, core vocabulary, intended mathematical primitives, first examples, and a disciplined path toward formalization. It is meant to be readable by people familiar with spectral triples, noncommutative geometry, $SU(2)$, spinors, quaternionic coordinates, and formal mathematics projects.
+## Why This Repo Exists
 
-The goal is not to announce a completed theory. The goal is to state a precise research program that can be criticized, improved, reduced to examples, and eventually formalized in small pieces.
+This repository establishes a public mathematical canon for QSG: the manifold, coordinate vocabulary, hypersphere geometry, spectral operators, coherence language, examples, and a disciplined path toward formalization.
 
-## Relation to spectral triples
+The goal is to make a precise research program inspectable. Definitions, examples, conjectural extensions, and speculative interpretations should remain separate.
 
-QSG is naturally adjacent to spectral triples because both approaches organize geometry through an algebra of observables, a state space, and a spectral or Dirac-type operator. In spectral-triple notation, the rough bridge is:
+## Core Manifold
 
-- an algebra $\mathcal A$ of observables,
-- a Hilbert space $\mathcal H$ of states,
-- a Dirac or spectral operator $D$,
-- commutators $[D,\pi(a)]$ encoding derivative or measurement structure.
+The starting object is
 
-QSG asks how this pattern behaves when the state and observable data preserve quaternionic or $SU(2)$-aware orientation-sensitive structure. The first useful target is not a grand theory, but a toy spectral triple on $SU(2)/S^3$ represented through complex spinors and quaternion-as-$M_2(\mathbb C)$ matrices.
+$$
+M = S^3 \times \mathbb R,
+$$
+
+where
+
+- $S^3 = \{q \in \mathbb H : \|q\| = 1\}$ is the unit-quaternion hypersphere,
+- $S^3 \cong SU(2)$ gives the rotor and spinor-facing group structure,
+- $\mathbb R$ supplies a resonance coordinate $s$,
+- a point of $M$ is written $(q,s)$.
+
+The $S^3$ coordinate carries phase, rotation, orientation, and polarization data. The $s$ coordinate tracks resonance level, anchor height, or spectral selection parameter.
+
+## Spectral Formalization
+
+QSG is adjacent to spectral triples and related operator-theoretic formalisms because it organizes geometry through an algebra of observables, a state space, and a spectral operator. The general bridge is:
+
+- an algebra $\mathcal A$ of functions or observables on $M$,
+- a complex spinor or matrix-valued state space $\mathcal H$,
+- a spectral operator $D$ sensitive to hypersphere and $s$-direction structure,
+- commutators $[D,\pi(a)]$ encoding derivative or measurement-like variation.
+
+This is a general mathematical interface for QSG examples.
 
 ## Status
 
-This is an early research canon. It is not a finished theory, not a proof of physics, and not a claim that standard quantum mechanics is wrong. The repo defines a vocabulary and a minimum formal core so that examples can be developed without mixing definitions, conjectures, implementation sketches, and speculation.
+This is an early research canon, not a finished theory. The current target is a minimal model on $M = S^3 \times \mathbb R$ with explicit quaternion-as-$M_2(\mathbb C)$ coordinates, a simple algebra of observables, a candidate spectral operator, and computed commutators.
 
-## Suggested first formalization target
+## Suggested First Formalization Target
 
-A toy spectral triple on $SU(2)/S^3$ represented through complex spinors and quaternion-as-$M_2(\mathbb C)$ matrices.
+A finite or truncated model of $M = S^3 \times \mathbb R$ using:
 
-The first formal target should be small enough to test in ordinary complex linear algebra before any native quaternionic Hilbert-space machinery is considered.
+- unit quaternions represented as complex $2 \times 2$ matrices,
+- a compact or discretized $s$ coordinate,
+- spinor-valued or matrix-valued states,
+- a spectral operator combining an $S^3/SU(2)$ component with an $s$-direction component.

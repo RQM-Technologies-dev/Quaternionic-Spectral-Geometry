@@ -6,39 +6,54 @@ Quaternionic Spectral Geometry (QSG).
 
 ## Core Idea
 
-Quaternionic Spectral Geometry is the study of geometric and physical systems whose relevant structure is not fully captured by scalar magnitude or complex phase alone, but by coupled phase, rotation, orientation, polarization, and coherence data represented through quaternionic/SU(2)-aware spectral structures.
+Quaternionic Spectral Geometry is the study of spectral, metric, phase, orientation, coherence, and resonance structures on quaternionic hypersphere spaces. Its basic model is
 
-QSG is proposed as an extension and coordinate framework for preserving orientation-sensitive structure. It does not begin by rejecting complex Hilbert spaces. Its minimum viable path starts by representing quaternionic data inside complex matrix and spinor form.
+$$
+M = S^3 \times \mathbb R,
+$$
+
+where $S^3$ is the unit-quaternion hypersphere and $\mathbb R$ is a real resonance or anchor coordinate.
+
+QSG treats orientation-sensitive data as geometric data. The framework starts with ordinary complex-linear tools by representing quaternionic coordinates through complex $2 \times 2$ matrices.
 
 ## Mathematical Primitives
 
 The initial vocabulary of QSG uses:
 
+- $M = S^3 \times \mathbb R$,
 - $S^3 \cong SU(2)$,
 - unit quaternions,
+- hypersphere coordinates $q = \cos(\phi) + u\sin(\phi)$,
 - quaternion slices $q = a + bI$ with $I^2 = -1$,
 - the complex $2 \times 2$ representation of quaternions,
-- Hilbert spaces of spinor-valued functions,
-- Dirac or spectral operators,
+- spinor-valued or matrix-valued state spaces,
+- spectral operators,
 - commutators $[D,\pi(a)]$,
-- compact resolvent or discrete spectral structure,
-- an optional anchor coordinate $s \in \mathbb R$.
+- compact, discrete, or truncated spectral structure,
+- spectral wells along the real coordinate $s \in \mathbb R$.
 
-These primitives are deliberately conservative. They point toward established structures in geometry, representation theory, spectral triples, and spin geometry before introducing any more speculative interpretation.
+These primitives are deliberately conservative. They point toward established structures in geometry, representation theory, operator theory, and spin geometry.
 
 ## State Space
 
-The basic state-space intuition is that a QSG state may carry more information than a scalar amplitude or a single complex phase. It may carry orientation-sensitive data encoded by unit quaternions, $SU(2)$ elements, spinors, or matrix representatives in $M_2(\mathbb C)$.
+A QSG state is modeled as a point, field, or section carrying data over
+
+$$
+(q,s) \in S^3 \times \mathbb R.
+$$
+
+The $q$ coordinate records unit-quaternion orientation data. The $s$ coordinate records resonance level, anchor height, or spectral selection parameter.
 
 The first formal state spaces should be complex:
 
-- spinor-valued functions on $SU(2)$ or $S^3$,
+- spinor-valued functions on $S^3$ or $M$,
 - finite-dimensional truncations of such functions,
-- matrix models that preserve quaternionic multiplication through $M_2(\mathbb C)$.
+- matrix models preserving quaternionic multiplication through $M_2(\mathbb C)$,
+- discrete grids or finite spectral ladders in the $s$ coordinate.
 
-Native quaternionic Hilbert spaces may become relevant later, but they are not required for the first formal bridge.
+Native quaternionic Hilbert spaces may become useful later, but they are not part of the minimum formal core.
 
-## Quaternionic Coordinates
+## Quaternionic Hypersphere Coordinates
 
 A quaternion can be written
 
@@ -48,78 +63,97 @@ $$
 
 with $i^2 = j^2 = k^2 = ijk = -1$. Unit quaternions form $S^3$ and are isomorphic to $SU(2)$.
 
-QSG treats quaternionic coordinates as carriers of phase, rotation, orientation, and polarization data. A slice $q = a + bI$ selects a complex plane inside $\mathbb H$, where $I$ is an imaginary unit satisfying $I^2 = -1$.
+A unit quaternion can also be written
 
-For formalization, the first bridge should use the standard embedding of $\mathbb H$ into complex $2 \times 2$ matrices.
+$$
+q = \cos(\phi) + u\sin(\phi),
+$$
+
+where $u$ is a unit imaginary quaternion. This expresses $S^3$ in rotor form: a real part, an oriented imaginary axis, and an angular coordinate.
+
+A slice
+
+$$
+q = a + bI
+$$
+
+selects a complex plane inside $\mathbb H$, where $I$ is an imaginary unit satisfying $I^2 = -1$.
+
+## The Manifold $M$
+
+The central object is
+
+$$
+M = S^3 \times \mathbb R.
+$$
+
+The product separates hypersphere orientation from the real resonance coordinate without treating them as unrelated. A function on $M$ may vary over quaternionic direction, angular position, and the real coordinate $s$.
+
+The real coordinate can support:
+
+- spectral selection,
+- well-like localization,
+- coherence levels,
+- ladder or filtration structures,
+- deformation parameters for operators on $S^3$.
 
 ## Spectral Operators
 
-A QSG spectral operator is a Dirac-like, Casimir-derived, or otherwise geometrically meaningful operator whose spectrum reflects the structure of the chosen state space.
+A QSG spectral operator is an operator whose spectrum reflects the geometry of $M$.
 
 Candidate examples include:
 
-- a Dirac operator on $SU(2)$ or $S^3$,
+- a Dirac-like operator on $S^3$,
+- a Casimir-derived operator from the $SU(2)$ action,
 - a finite Peter-Weyl truncation with a discrete spectral ladder,
-- a matrix approximation whose spectrum preserves some $SU(2)$ or quaternionic structure.
+- an $s$-direction derivative, difference operator, or potential term,
+- a combined operator such as $D_M = D_{S^3} + D_s + V(s)$.
 
-The term "spectral operator" should not be used as a substitute for proof. Each example should specify its domain, algebra action, spectral behavior, and relation to the intended geometry.
+Each example should specify its domain or finite-dimensional substitute, algebra action, spectral behavior, and relation to the geometry of $M$.
 
 ## Measurement And Observables
 
 QSG observables should be represented by an algebra $\mathcal A$ acting on a state space $\mathcal H$ through a representation $\pi$.
 
-In the spectral-triple pattern, a commutator
+For a spectral operator $D$, the commutator
 
 $$
 [D,\pi(a)]
 $$
 
-measures how the spectral operator $D$ detects variation in an observable $a$. In QSG, this structure is interpreted as a derivative or measurement relation that may preserve orientation-sensitive information.
+measures how $D$ detects variation in an observable $a$. In QSG, this can include variation along the hypersphere coordinate $q$, variation along the real coordinate $s$, or coupled variation between them.
 
 ## Coherence
 
-Coherence means persistence of structured phase, orientation, polarization, or spectral relationship across a transformation, measurement, or evolution.
+Coherence means persistence of structured phase, orientation, resonance level, or spectral relationship across a transformation or operator action.
 
-In early QSG work, coherence should be treated as a property to define in examples rather than as a universal slogan. A useful example should state what is coherent, under which operator or action, and how that coherence can be computed or bounded.
+In early QSG work, coherence should be defined example by example. A useful example should state what is coherent, under which operator or action, and how that coherence can be computed, bounded, or compared.
 
-## Anchors And Spectral Wells
+## Spectral Wells
 
-An optional extension of QSG adds an anchor coordinate
+A spectral well is a region or profile in the real coordinate $s$ where spectral behavior becomes selected, localized, or stable.
 
-$$
-s \in \mathbb R
-$$
-
-and considers state spaces of the form
-
-$$
-S^3 \times \mathbb R_s.
-$$
-
-In this language, an anchor is a coordinate or parameter that tracks stabilization, selection, or localization of a spectral structure. An anchor well is a proposed spectral selection or stabilization region.
-
-This material is research-program vocabulary. It is not required for the first formal core.
+In a toy model, a well may be represented by a potential term $V(s)$, a weighting function, a discrete ladder, or a localization rule. This is part of the mathematical structure of $M$, not an optional appendage to the framework.
 
 ## What QSG Is Not
 
-QSG is not a claim that standard quantum mechanics is wrong.
+QSG is not a completed theory.
 
-QSG is not a completed physical theory.
-
-QSG is not a substitute for spectral-triple definitions, operator-domain checks, compactness conditions, or bounded-commutator proofs.
+QSG is not a substitute for definitions, operator-domain checks, compactness conditions, or bounded-commutator proofs.
 
 QSG is not an assertion that native quaternionic Hilbert spaces must be used immediately.
 
-QSG is a proposed extension and coordinate framework for preserving orientation-sensitive structure in examples where scalar magnitude and complex phase may not be the most natural complete language.
+QSG is a mathematical coordinate and operator framework for preserving orientation-sensitive and resonance-sensitive structure.
 
 ## Minimum Viable Formal Core
 
 The minimum viable formal core should contain:
 
 1. A representation of quaternions as complex $2 \times 2$ matrices.
-2. A small algebra of observables acting on a complex spinor state space.
-3. A toy $SU(2)$ or $S^3$ geometry, possibly finite or truncated.
-4. A candidate Dirac or spectral operator.
-5. Explicit commutators $[D,\pi(a)]$.
-6. A statement of boundedness, compact-resolvent behavior, or a finite-dimensional substitute.
-7. A clear separation between proved properties, conjectured properties, and interpretive language.
+2. The model manifold $M = S^3 \times \mathbb R$.
+3. A small algebra of observables on $M$.
+4. A complex spinor-valued or matrix-valued state space.
+5. A candidate spectral operator on a finite or truncated model.
+6. Explicit commutators $[D,\pi(a)]$.
+7. A definition of coherence or spectral wells in the example.
+8. A clear separation between definitions, proved properties, conjectures, and interpretation.

@@ -11,21 +11,22 @@ Please distinguish:
 - examples,
 - computations,
 - references,
-- speculation.
+- interpretation.
 
-Do not make grand claims without derivations, proofs, examples, or references. In particular, avoid claims that QSG proves a physical theory, replaces standard quantum mechanics, or settles foundational questions.
+Do not make grand claims without derivations, proofs, examples, or references. Keep the repository focused on mathematical objects, maps, operators, and examples.
 
 ## Preferred Contributions
 
 Preferred contributions include:
 
-- small formalizable examples,
-- clearer definitions,
+- clearer definitions of $M = S^3 \times \mathbb R$,
 - explicit maps into $M_2(\mathbb C)$,
-- toy spectral triples or near-spectral-triple examples,
+- hypersphere coordinate examples,
+- small spectral-operator models,
 - bounded-commutator calculations,
+- spectral well and coherence definitions,
 - references to established literature,
-- Lean/Mathlib feasibility notes.
+- formalization feasibility notes.
 
 ## Discussion
 

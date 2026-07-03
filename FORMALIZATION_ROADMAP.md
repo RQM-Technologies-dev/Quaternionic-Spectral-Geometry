@@ -4,14 +4,14 @@ This roadmap is intentionally incremental. Each phase should produce definitions
 
 ## Phase 0: Canon And Vocabulary
 
-Define QSG, its primitives, its relation to spectral triples, and its claim discipline.
+Define QSG, the model manifold $M = S^3 \times \mathbb R$, the quaternionic hypersphere vocabulary, and the distinction between definitions, examples, conjectures, and interpretation.
 
 Deliverables:
 
 - canonical definition,
 - glossary,
-- bridge document,
-- examples marked as toy, conjectural, or speculative.
+- hypersphere coordinate notes,
+- spectral formalization bridge.
 
 ## Phase 1: Quaternion-As-$M_2(\mathbb C)$ Representation
 
@@ -30,20 +30,37 @@ Deliverables:
 - conjugation/norm relation,
 - unit-quaternion to $SU(2)$ relation.
 
-## Phase 2: $SU(2)/S^3$ Toy Geometry
+## Phase 2: Quaternionic Hypersphere Geometry
 
-Use $S^3 \cong SU(2)$ as the first geometric arena.
+Use
+
+$$
+S^3 = \{q \in \mathbb H : \|q\| = 1\}
+$$
+
+as the first geometric arena.
 
 Deliverables:
 
-- coordinate conventions,
-- group action conventions,
-- finite or truncated approximation strategy,
-- statement of which smooth structures are being approximated.
+- rotor coordinates $q = \cos(\phi) + u\sin(\phi)$,
+- slice conventions $q = a + bI$,
+- group action conventions through $SU(2)$,
+- geodesic or great-circle examples.
 
-## Phase 3: Spinor Hilbert Space
+## Phase 3: The Product Manifold $M = S^3 \times \mathbb R$
 
-Represent the state space using complex spinors.
+Add the real coordinate $s$.
+
+Deliverables:
+
+- point notation $(q,s)$,
+- functions and observables on $M$,
+- discrete or compact approximations of the $s$ direction,
+- examples of resonance-coordinate profiles.
+
+## Phase 4: State Space
+
+Represent states using complex spinors, matrix-valued functions, or finite truncations.
 
 Deliverables:
 
@@ -51,17 +68,18 @@ Deliverables:
 - representation $\pi$ of the algebra,
 - finite-dimensional substitute if using a truncation.
 
-## Phase 4: Candidate Dirac/Spectral Operator
+## Phase 5: Candidate Spectral Operator
 
-Select a Dirac-like, Casimir-derived, or finite spectral operator.
+Select a spectral operator on the toy model.
 
 Deliverables:
 
-- explicit operator definition,
-- domain or finite-dimensional replacement,
-- spectral data in the toy model.
+- $S^3$ operator component,
+- $s$-direction operator component,
+- optional potential or well profile $V(s)$,
+- explicit finite matrix form when possible.
 
-## Phase 5: Bounded Commutators
+## Phase 6: Commutators And Variation
 
 Study commutators
 
@@ -73,36 +91,26 @@ Deliverables:
 
 - explicit commutator formulas,
 - boundedness checks or finite-dimensional analogues,
-- examples where the commutator encodes orientation-sensitive variation.
+- examples where the commutator detects hypersphere variation, $s$-variation, or both.
 
-## Phase 6: Compact Resolvent / Finitely Summable Toy Model
+## Phase 7: Spectral Wells And Coherence
 
-Check compact resolvent or a finite-dimensional substitute.
-
-Deliverables:
-
-- statement of compactness target,
-- discrete spectral ladder in the toy example,
-- possible finite summability condition if appropriate.
-
-## Phase 7: Anchored Extension $(S^3 \times \mathbb R_s)$
-
-Introduce the optional anchor coordinate only after the unanchored core is clear.
+Define spectral wells and coherence in the toy model.
 
 Deliverables:
 
-- definition of $s \in \mathbb R$,
-- candidate anchored state space,
-- examples of anchor wells as spectral selection or stabilization structures,
-- clear label that this is research-program material.
+- mathematical definition of a well profile,
+- selected or localized spectral modes,
+- coherence measure or comparison rule,
+- distinction between proved behavior and conjectural interpretation.
 
-## Phase 8: Lean/Mathlib Feasibility Bridge
+## Phase 8: Feasibility Bridge
 
-Translate the smallest stable definitions into a Lean-friendly checklist.
+Translate the smallest stable definitions into a formalization checklist.
 
 Deliverables:
 
 - dependencies needed from complex matrices and linear algebra,
 - dependencies needed from $SU(2)$ or matrix groups,
-- dependencies needed from spectral-triple formalization,
-- a minimal theorem or example that can be attempted without speculative interpretation.
+- dependencies needed from operator theory,
+- a minimal theorem or example that can be attempted without interpretive claims.
