@@ -2,11 +2,13 @@
 
 This note describes how Quaternionic Spectral Geometry can be expressed in a general spectral-operator language. It is not addressed to any specific external repository or project.
 
-The purpose is modest: define a small mathematical interface for examples on
+The purpose is modest: define a small mathematical interface for compact prototypes and anchored examples on
 
 $$
 M = S^3 \times \mathbb R.
 $$
+
+The focused formulation target is maintained in [Spectral-Triple Anchor](SPECTRAL_TRIPLE_ANCHOR.md).
 
 ## General Mapping
 
@@ -47,10 +49,11 @@ A small test case should:
 
 1. Define the quaternion-as-$M_2(\mathbb C)$ representation.
 2. Model $S^3 \cong SU(2)$ through unit quaternions or $SU(2)$ matrices.
-3. Add the real coordinate $s \in \mathbb R$ and define $M = S^3 \times \mathbb R$.
-4. Choose a small algebra of smooth, truncated, or matrix-valued observables on $M$.
+3. Choose a compact $S^3$ prototype before making claims about the anchored product.
+4. Choose a small algebra of smooth, truncated, or matrix-valued observables.
 5. Let the state space be spinor-valued functions or a finite truncation.
-6. Define a spectral operator combining an $S^3$ component and an $s$-direction component.
+6. Define a Dirac-type, Casimir-derived, or finite spectral operator.
 7. Compute commutators and identify compact, discrete, or finite-dimensional spectral behavior.
+8. Add the real coordinate $s \in \mathbb R$ only after the compact prototype has a clear status.
 
 The point is to produce a modest example that can be criticized technically.

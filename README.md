@@ -42,6 +42,8 @@ QSG is adjacent to spectral triples and related operator-theoretic formalisms be
 
 This is a general mathematical interface for QSG examples.
 
+For the focused spectral-triple formulation target, see [Spectral-Triple Anchor](SPECTRAL_TRIPLE_ANCHOR.md).
+
 ## Status
 
 This is an early research canon, not a finished theory. The current target is a minimal model on $M = S^3 \times \mathbb R$ with explicit quaternion-as-$M_2(\mathbb C)$ coordinates, a simple algebra of observables, a candidate spectral operator, and computed commutators.
@@ -54,3 +56,5 @@ A finite or truncated model of $M = S^3 \times \mathbb R$ using:
 - a compact or discretized $s$ coordinate,
 - spinor-valued or matrix-valued states,
 - a spectral operator combining an $S^3/SU(2)$ component with an $s$-direction component.
+
+The first compact prototype should be checked before the anchored $S^3 \times \mathbb R$ model is treated as a spectral triple.

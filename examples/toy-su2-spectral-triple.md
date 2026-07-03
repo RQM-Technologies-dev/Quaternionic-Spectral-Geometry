@@ -1,10 +1,14 @@
-# Toy Spectral Model On $M = S^3 \times \mathbb R$
+# Toy Spectral Model On $S^3$ And $S^3 \times \mathbb R$
 
 This is a sketch of a possible toy example. It is not yet a completed formal model.
 
+The first checkable target is the compact $S^3 \cong SU(2)$ prototype described in [Spectral-Triple Anchor](../SPECTRAL_TRIPLE_ANCHOR.md). The anchored $S^3 \times \mathbb R$ version should be treated as a later extension unless the $s$ coordinate is compactified, discretized, confined, or handled by a noncompact spectral-triple formalism.
+
 ## Algebra
 
-Use smooth, truncated, or finite functions on
+For the compact prototype, use smooth, truncated, or finite functions on $S^3 \cong SU(2)$.
+
+For the anchored extension, use smooth, truncated, or finite functions on
 
 $$
 M = S^3 \times \mathbb R.
