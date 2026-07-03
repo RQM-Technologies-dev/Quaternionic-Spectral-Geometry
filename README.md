@@ -58,3 +58,7 @@ A finite or truncated model of $M = S^3 \times \mathbb R$ using:
 - a spectral operator combining an $S^3/SU(2)$ component with an $s$-direction component.
 
 The first compact prototype should be checked before the anchored $S^3 \times \mathbb R$ model is treated as a spectral triple.
+
+## Course Material
+
+The current storefront course contains more expanded teaching material than this early canon. A repo-local snapshot is maintained in [course/storefront-snapshot](course/storefront-snapshot/README.md) so the course information can be preserved here first, then normalized into durable QSG roots over time.

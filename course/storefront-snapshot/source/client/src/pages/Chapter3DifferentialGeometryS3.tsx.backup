@@ -1,0 +1,330 @@
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { ArrowLeft } from "lucide-react";
+import { InlineMath, BlockMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
+
+export default function Chapter3DifferentialGeometryS3() {
+  useEffect(() => {
+    document.title = "Chapter 3: Differential Geometry on S³ | QSG Textbook";
+
+    const metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    metaDescription.content = "Chapter 3 of Quaternionic Spectral Geometry textbook: Differential geometry on the 3-sphere, exploring manifold structure, metrics, curvature, and the Laplacian.";
+    document.head.appendChild(metaDescription);
+
+    return () => {
+      document.head.removeChild(metaDescription);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Link href="/quaternionic-spectral-geometry-book" className="inline-flex items-center gap-2 text-blue-600 text-sm md:text-base hover:text-blue-800 transition-colors mb-8" data-testid="link-back-to-book">
+          <ArrowLeft className="w-4 h-4" />
+          Back to Table of Contents
+        </Link>
+
+        {/* Chapter Header */}
+        <div className="mb-12 border-b-2 border-blue-200 pb-6">
+          <div className="text-sm text-gray-500 mb-2">Chapter 3</div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-3">
+            Differential Geometry on S³
+          </h1>
+          <h2 className="text-2xl font-semibold text-blue-700 italic">
+            Manifold Structure and Metrics
+          </h2>
+        </div>
+
+        {/* Chapter Content */}
+        <div className="prose prose-lg max-w-none text-sm md:text-base lg:text-lg">
+
+          {/* Chapter Overview */}
+          <div className="mb-12">
+            <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-4">Chapter Overview</h3>
+            <p className="mb-4 text-sm md:text-base">
+              This chapter builds the bridge between algebraic quaternions and geometric intuition. Here, we explore how the 3-sphere <InlineMath math="S^3" />—the space of unit quaternions—behaves as a smooth curved manifold. We learn how to move, measure, and differentiate on it, just as one does in ordinary calculus on flat <InlineMath math="\mathbb{R}^n" />. The difference is that <InlineMath math="S^3" /> curves back onto itself, meaning that straight lines become <strong>great circles</strong>, distances wrap around, and algebraic multiplication becomes geometric motion.
+            </p>
+            <p className="mb-4 text-sm md:text-base">
+              We will examine coordinate systems, tangent spaces, curvature, and the Laplacian. Each of these concepts deepens the connection between geometry and rotation. By the end of the chapter, you will see how every property of <InlineMath math="S^3" />—its curvature, metric, and Laplacian—directly supports quaternionic spectral analysis and the deeper study of resonance on curved manifolds.
+            </p>
+          </div>
+
+          {/* Section 3.1 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">3.1 The Manifold Structure of <InlineMath math="S^3" /></h2>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Definition 3.1 (The 3-Sphere)</h4>
+              <p className="mb-4 text-sm md:text-base">
+                The 3-sphere is defined as the locus of all points in <InlineMath math="\mathbb{R}^4" /> that are a unit distance from the origin:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="S^3 = \{(x_0, x_1, x_2, x_3) \in \mathbb{R}^4 : x_0^2 + x_1^2 + x_2^2 + x_3^2 = 1\}." />
+              <p className="mb-4 text-sm md:text-base">
+                This surface cannot be visualized in full, but its properties mirror the familiar 2-sphere <InlineMath math="S^2" /> in <InlineMath math="\mathbb{R}^3" />. Like <InlineMath math="S^2" />, it is smooth, compact, and has no boundary, but it exists one dimension higher. The extra dimension allows <InlineMath math="S^3" /> to encode all possible rotations in 3D space.
+              </p>
+              <p className="mb-4 text-sm md:text-base">
+                Each point of <InlineMath math="S^3" /> can be written as a unit quaternion <InlineMath math="q = x_0 + x_1 i + x_2 j + x_3 k" />. Multiplying two such points corresponds to composing rotations, and this multiplication endows <InlineMath math="S^3" /> with the structure of a Lie group.
+              </p>
+            </div>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Local Coordinates and Stereographic Projection</h4>
+              <p className="mb-4 text-sm md:text-base">
+                Visualizing <InlineMath math="S^3" /> is challenging, but we can flatten it using stereographic projection. Imagine projecting from the north pole <InlineMath math="(1, 0, 0, 0)" /> onto the hyperplane <InlineMath math="x_0 = -1" />. Each point on <InlineMath math="S^3" /> except the north pole is mapped smoothly to a point in <InlineMath math="\mathbb{R}^3" />:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\pi(x_0, x_1, x_2, x_3) = \frac{(x_1, x_2, x_3)}{1 - x_0}." />
+              <p className="mb-4 text-sm md:text-base">The inverse map is</p>
+              <div className="overflow-x-auto"><BlockMath math="x_0 = \frac{1 - r^2}{1 + r^2}, \quad (x_1, x_2, x_3) = \frac{2\mathbf{r}}{1 + r^2}, \quad r = |\mathbf{r}|." />
+              <p className="mb-4 text-sm md:text-base">
+                This map preserves angles (conformal) but distorts lengths, much like projecting the Earth onto a 2D map.
+              </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Intuition:</p>
+                <p>If you could stand inside a four-dimensional space and look at <InlineMath math="S^3" />, you'd see a perfectly smooth surface curving in every direction. Stereographic projection lets us "slice" that curvature and see it inside ordinary 3D space.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3.2 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">3.2 Tangent Spaces and the Lie Group Structure</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              Every point <InlineMath math="q \in S^3" /> has an attached tangent space <InlineMath math="T_q S^3" />, which can be thought of as the set of all possible directions you could start to move from <InlineMath math="q" /> while remaining on the surface.
+            </p>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Proposition 3.3 (Tangent Space at a Point)</h4>
+              <p className="mb-4 text-sm md:text-base">
+                At <InlineMath math="q \in S^3" />, the tangent space is:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="T_q S^3 = \{v \in \mathbb{R}^4 : \langle q, v \rangle = 0\}." />
+              <p className="mb-4 text-sm md:text-base">
+                This means the tangent space consists of all vectors orthogonal to <InlineMath math="q" />. In quaternionic form, this becomes:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="T_q S^3 = \{q\mathbf{x} : \mathbf{x} \in \mathrm{Im}\mathbb{H}\}." />
+              <p className="mb-4 text-sm md:text-base">
+                Here, <InlineMath math="\mathrm{Im}\mathbb{H}" /> (the imaginary quaternions) corresponds to the space of infinitesimal rotations.
+              </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Geometric Intuition:</p>
+                <p>Multiplying a unit quaternion <InlineMath math="q" /> by a pure imaginary quaternion <InlineMath math="\mathbf{x}" /> "tilts" <InlineMath math="q" /> along a tangent direction. You can think of <InlineMath math="\mathbf{x}" /> as defining the instantaneous axis and speed of rotation.</p>
+              </div>
+            </div>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">The Lie Group Structure</h4>
+              <p className="mb-4 text-sm md:text-base">
+                Because quaternions multiply smoothly, <InlineMath math="S^3" /> is not just a manifold—it is a <strong>Lie group</strong>. Its tangent space at the identity element <InlineMath math="1" /> forms a Lie algebra <InlineMath math="\mathfrak{su}(2)" />. The generators <InlineMath math="i, j, k" /> satisfy:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="[i, j] = 2k, \quad [j, k] = 2i, \quad [k, i] = 2j." />
+              <p className="mb-4 text-sm md:text-base">
+                These commutation relations capture how infinitesimal rotations combine—mirroring the vector cross product in <InlineMath math="\mathbb{R}^3" />.
+              </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Interpretation:</p>
+                <p>The Lie algebra tells us that infinitesimal rotations about different axes do not commute; the order matters. This property underlies the geometry of <InlineMath math="S^3" /> and the structure of 3D rotational physics.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3.3 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">3.3 The Bi-Invariant Metric and Levi–Civita Connection</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The geometry of <InlineMath math="S^3" /> is measured using a metric—a way of defining lengths and angles. On <InlineMath math="S^3" />, this metric is inherited from the ambient <InlineMath math="\mathbb{R}^4" /> and preserved under quaternionic multiplication.
+            </p>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">The Bi-Invariant Metric</h4>
+              <p className="mb-4 text-sm md:text-base">
+                The metric is defined by the standard dot product:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\langle v, w \rangle_q = v_0 w_0 + v_1 w_1 + v_2 w_2 + v_3 w_3." />
+              <p className="mb-4 text-sm md:text-base">
+                Left or right multiplication by any unit quaternion is an isometry:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\langle L_p(v), L_p(w) \rangle = \langle v, w \rangle, \quad \langle R_p(v), R_p(w) \rangle = \langle v, w \rangle." />
+              <p className="mb-4 text-sm md:text-base">
+                This <strong>bi-invariance</strong> means that no point or direction on <InlineMath math="S^3" /> is geometrically special. The space looks identical from every vantage point.
+              </p>
+            </div>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">The Levi–Civita Connection</h4>
+              <p className="mb-4 text-sm md:text-base">
+                The Levi–Civita connection <InlineMath math="\nabla" /> is the tool that defines how to take derivatives of vector fields on curved spaces. For <InlineMath math="S^3" />, it has the elegant form:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\nabla_X Y = \frac{1}{2}[X, Y]." />
+              <p className="mb-4 text-sm md:text-base">
+                The connection measures how much a vector "twists" as you move it along the manifold. On <InlineMath math="S^3" />, this twisting is uniform in all directions, reflecting its constant curvature.
+              </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Physical Picture:</p>
+                <p>Imagine holding a gyroscope and walking along a curved surface. The Levi–Civita connection describes how the gyroscope's axis slowly precesses to stay parallel to itself despite the surface's curvature.</p>
+              </div>
+            </div>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Curvature of <InlineMath math="S^3" /></h4>
+              <p className="mb-4 text-sm md:text-base">
+                The curvature tensor tells us how parallel transport around small loops fails to return a vector to its original orientation. On <InlineMath math="S^3" />, it is remarkably simple:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="R(X, Y)Z = \langle Y, Z \rangle X - \langle X, Z \rangle Y." />
+              <p className="mb-4 text-sm md:text-base">
+                All tangent planes have the same sectional curvature <InlineMath math="K = 1" />, meaning <InlineMath math="S^3" /> is a space of <strong>constant positive curvature.</strong>
+              </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Interpretation:</p>
+                <p><InlineMath math="S^3" /> is like a perfectly uniform elastic ball. Any direction of motion experiences the same gentle curvature, which ensures smooth, isotropic behavior of rotations.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3.4 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">3.4 The Laplace–Beltrami Operator on <InlineMath math="S^3" /></h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The Laplacian generalizes the idea of the second derivative to curved manifolds. It measures how functions deviate from their average value nearby—capturing oscillations, harmonics, and waves on the manifold.
+            </p>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Definition 3.8 (Laplacian)</h4>
+              <p className="mb-4 text-sm md:text-base">
+                For a function <InlineMath math="f: S^3 \to \mathbb{R}" />:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\Delta f = - (E_1^2 + E_2^2 + E_3^2)f," />
+              <p className="mb-4 text-sm md:text-base">
+                where <InlineMath math="E_i" /> are orthonormal left-invariant vector fields corresponding to the basis <InlineMath math="\{i, j, k\}" />.
+              </p>
+            </div>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Eigenvalues and Harmonics</h4>
+              <p className="mb-4 text-sm md:text-base">
+                The eigenfunctions of <InlineMath math="\Delta" /> describe the standing wave patterns possible on <InlineMath math="S^3" />. The eigenvalue equation is:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\Delta f = \lambda f, \quad \lambda_\ell = \ell(\ell + 2), \quad \ell = 0, 1, 2, \dots" />
+              <p className="mb-4 text-sm md:text-base">
+                Each eigenvalue corresponds to a frequency of vibration. For <InlineMath math="\ell = 0" />, the function is constant; for higher <InlineMath math="\ell" />, the oscillations increase in complexity.
+              </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Analogy:</p>
+                <p>Just as a drumhead supports harmonics (standing waves), the 3-sphere supports 4D harmonics. Each "note" corresponds to a mode of vibration with frequency <InlineMath math="\sqrt{\ell(\ell+2)}" />. These harmonic modes play a central role in spectral geometry and quantum field theory on curved spaces.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3.5 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">3.5 Volume Form and Integration on <InlineMath math="S^3" /></h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The volume element in spherical coordinates <InlineMath math="(\chi, \theta, \varphi)" /> is:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="dV = \sin^2\!\chi\,\sin\theta\,d\chi\,d\theta\,d\varphi." />
+            <p className="mb-4 text-sm md:text-base">The total volume of <InlineMath math="S^3" /> is</p>
+            <div className="overflow-x-auto"><BlockMath math="\mathrm{Vol}(S^3) = 2\pi^2." />
+            <p className="mb-4 text-sm md:text-base">
+              This formula confirms that <InlineMath math="S^3" /> has finite size but no edges. Integration on <InlineMath math="S^3" /> is defined by summing over all coordinates with this volume weight:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="\int_{S^3} f\,dV = \int_0^\pi \int_0^\pi \int_0^{2\pi} f(\chi, \theta, \varphi)\,\sin^2\!\chi\,\sin\theta\,d\varphi\,d\theta\,d\chi." />
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+              <p className="font-semibold mb-2">Geometric Meaning:</p>
+              <p>This measure reflects how much surface area exists at each latitude <InlineMath math="\chi" /> of the hypersphere. The <InlineMath math="\sin^2\chi" /> term arises from the curvature of the higher-dimensional space.</p>
+            </div>
+          </section>
+
+          {/* Section 3.6 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">3.6 Geodesics and Parallel Transport</h2>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Geodesics</h4>
+              <p className="mb-4 text-sm md:text-base">
+                On <InlineMath math="S^3" />, geodesics are the curves of shortest distance. They generalize straight lines from Euclidean space. Any unit imaginary quaternion <InlineMath math="\mathbf{u}" /> defines a geodesic:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\gamma(t) = e^{\mathbf{u}t}, \quad t \in [0, 2\pi]." />
+              <p className="mb-4 text-sm md:text-base">
+                This represents a great circle with constant angular velocity, wrapping fully around the sphere as <InlineMath math="t" /> runs from 0 to <InlineMath math="2\pi" />.
+              </p>
+            </div>
+
+            <div className="mb-8 text-sm md:text-base">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Parallel Transport</h4>
+              <p className="mb-4 text-sm md:text-base">
+                A vector field <InlineMath math="X(t)" /> along <InlineMath math="\gamma(t)" /> is said to be <em>parallel</em> if it changes only as necessary to remain tangent to the sphere:
+              </p>
+              <div className="overflow-x-auto"><BlockMath math="\frac{dX}{dt} + \frac{1}{2}[\mathbf{u}, X] = 0." />
+              <p className="mb-4 text-sm md:text-base">
+                This equation shows how vectors "rotate" as they move along great circles. The term <InlineMath math="[\mathbf{u}, X]" /> encodes the infinitesimal rotation due to the sphere's curvature.
+              </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Analogy:</p>
+                <p>Imagine walking along Earth's equator while holding an arrow that always points "forward." When you return to your starting point, the arrow may have rotated relative to your original orientation. On <InlineMath math="S^3" />, this same effect occurs in one higher dimension.</p>
+              </div>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+                <p className="font-semibold mb-2">Physical Parallel:</p>
+                <p>This behavior is identical to how quantum spin precesses—parallel transport of a spinor along a closed path accumulates a geometric phase determined by the curvature of <InlineMath math="S^3" />.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3.7 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">3.7 Summary and Outlook</h2>
+
+            <ul className="list-disc ml-4 md:ml-6 lg:ml-8 text-sm md:text-base space-y-3 mb-6">
+              <li>The 3-sphere <InlineMath math="S^3" /> is both a <strong>manifold</strong> and a <strong>Lie group</strong>, making it one of the most symmetric spaces in mathematics.</li>
+              <li>Its curvature is constant and positive, meaning that all directions are geometrically equivalent.</li>
+              <li>The Laplacian's eigenvalues <InlineMath math="\ell(\ell+2)" /> define the vibration modes that underlie spectral geometry.</li>
+              <li>Geodesics correspond to quaternionic exponentials, providing the exact mathematical description of rotation.</li>
+              <li>The Levi–Civita connection governs how vectors and spinors evolve when moved along the manifold—forming the mathematical foundation of rotational dynamics and coherence on curved spaces.</li>
+            </ul>
+
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+              <p className="font-semibold mb-2">Next Chapter Preview:</p>
+              <p>In Chapter 4, we introduce <strong>Quaternionic Calculus</strong>, which extends these geometric tools to differentiation and integration of quaternion-valued functions. This will unify analysis, geometry, and spectral theory into one coherent quaternionic framework.</p>
+            </div>
+          </section>
+
+          {/* Further Reading */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">Further Reading</h2>
+
+            <ul className="list-disc ml-4 md:ml-6 lg:ml-8 text-sm md:text-base space-y-2">
+              <li>Lee, <em>Introduction to Smooth Manifolds</em>.</li>
+              <li>Do Carmo, <em>Riemannian Geometry</em>.</li>
+              <li>Jost, <em>Riemannian Geometry and Geometric Analysis</em>.</li>
+              <li>Salamon, <em>Riemannian Geometry and Holonomy Groups</em>.</li>
+              <li>Warner, <em>Foundations of Differentiable Manifolds and Lie Groups</em>.</li>
+            </ul>
+          </section>
+
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="mt-12 pt-6 border-t-2 border-blue-200">
+          <Link href="/quaternionic-spectral-geometry-book" className="inline-flex items-center gap-2 text-blue-600 text-sm md:text-base hover:text-blue-800 transition-colors" data-testid="link-back-to-book-bottom">
+            <ArrowLeft className="w-4 h-4" />
+            Back to Table of Contents
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

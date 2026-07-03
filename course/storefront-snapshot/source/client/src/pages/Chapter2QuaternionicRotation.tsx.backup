@@ -1,0 +1,313 @@
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { ArrowLeft } from "lucide-react";
+import { InlineMath, BlockMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
+
+export default function Chapter2QuaternionicRotation() {
+  useEffect(() => {
+    document.title = "Chapter 2: The Quaternionic Rotation Form | QSG Textbook";
+
+    const existingMeta = document.querySelector('meta[name="description"]');
+    if (!existingMeta) {
+      const metaDescription = document.createElement("meta");
+      metaDescription.name = "description";
+      metaDescription.content = "Chapter 2 of Quaternionic Spectral Geometry textbook: The quaternionic rotation form, exponential and logarithm on S³, the SU(2)/SO(3) double cover, and the Hopf fibration.";
+      document.head.appendChild(metaDescription);
+
+      return () => {
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta) document.head.removeChild(meta);
+      };
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Link href="/quaternionic-spectral-geometry-book" className="inline-flex items-center gap-2 text-blue-600 text-sm md:text-base hover:text-blue-800 transition-colors mb-8" data-testid="link-back-to-book">
+          <ArrowLeft className="w-4 h-4" />
+          Back to Table of Contents
+        </Link>
+
+        {/* Chapter Header */}
+        <div className="mb-12 border-b-2 border-blue-200 pb-6">
+          <div className="text-sm text-gray-500 mb-2">Chapter 2</div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-3">
+            The Quaternionic Rotation Form
+          </h1>
+          <h2 className="text-2xl font-semibold text-blue-700 italic">
+            <InlineMath math="q = \cos\varphi + \mathbf{u}\sin\varphi" /> and the 3-Sphere
+          </h2>
+        </div>
+
+        {/* Chapter Content */}
+        <div className="prose prose-lg max-w-none text-sm md:text-base lg:text-lg">
+
+          {/* Chapter Overview */}
+          <div className="mb-12">
+            <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-4">Chapter Overview</h3>
+            <p className="mb-4 text-sm md:text-base">
+              This chapter deepens our geometric understanding of unit quaternions as points on the 3-sphere <InlineMath math="S^3" />. We show how every unit quaternion can be written as
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="q = \cos\varphi + \mathbf{u}\sin\varphi, \quad |\mathbf{u}| = 1,\ \mathbf{u}^2 = -1," />
+            <p className="mb-4 text-sm md:text-base">
+              and explore how this simple form encodes the full structure of 3D rotations, spin, and orientation. This chapter will help you visualize quaternions not just as algebraic symbols, but as rotations living on a curved space — the 3-sphere — that wraps around itself in four dimensions.
+            </p>
+            <p className="mb-4 text-sm md:text-base">
+              We build from the algebraic form to the geometric meaning. The exponential and logarithmic forms reveal periodicity and spin behavior. The covering map <InlineMath math="S^3 \to \mathrm{SO}(3)" /> exposes the <InlineMath math="4\pi" /> spinor topology that makes quantum spin possible. Then we develop the geometry of <InlineMath math="S^3" />: tangent spaces, geodesics, invariant frames, and the Hopf fibration — the bridge linking quaternionic rotations to physical space. The goal is to show that <strong>rotation is curvature</strong>, and the quaternion is its measure.
+            </p>
+          </div>
+
+          {/* Section 2.1 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.1 Deriving the Axis–Angle Form</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              Every unit quaternion represents a rotation, and the rotation can always be described by an <strong>axis</strong> (a direction in 3D space) and an <strong>angle</strong> (how far to rotate around that axis). If we write a quaternion <InlineMath math="q = a + \mathbf{v}" /> with <InlineMath math="a \in \mathbb{R}" /> and <InlineMath math="\mathbf{v} \in \operatorname{Im}\mathbb{H} \cong \mathbb{R}^3" />, then the condition for unit norm, <InlineMath math="a^2 + |\mathbf{v}|^2 = 1" />, is exactly the equation of a 3-sphere in <InlineMath math="\mathbb{R}^4" />.
+            </p>
+
+            <p className="mb-4 text-sm md:text-base">
+              We can parameterize this constraint using a single real parameter <InlineMath math="\varphi" /> as:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="a = \cos\varphi, \quad |\mathbf{v}| = \sin\varphi." />
+            <p className="mb-4 text-sm md:text-base">
+              This gives us a natural geometric picture — <InlineMath math="a" /> is the projection of <InlineMath math="q" /> onto the real axis, and <InlineMath math="\mathbf{v}" /> lies on a 3D imaginary sphere of radius <InlineMath math="\sin\varphi" />. If we define <InlineMath math="\mathbf{u} = \mathbf{v}/|\mathbf{v}|" />, then <InlineMath math="\mathbf{u}" /> is a <strong>unit vector</strong> giving the axis of rotation. Combining these yields:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="q = \cos\varphi + \mathbf{u}\sin\varphi, \quad \mathbf{u}^2 = -1." />
+
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+              <p className="font-semibold mb-2">Interpretation.</p>
+              <p>The quaternion's real part <InlineMath math="\cos\varphi" /> represents how much of the rotation remains "aligned" with the original frame, while the imaginary part <InlineMath math="\mathbf{u}\sin\varphi" /> encodes the rotational deviation along axis <InlineMath math="\mathbf{u}" />. The total rotation angle in physical space is <strong>twice</strong> the quaternionic angle, <InlineMath math="2\varphi" />, because the group <InlineMath math="S^3" /> double-covers <InlineMath math="\mathrm{SO}(3)" />.</p>
+            </div>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">Exponential Form</h4>
+            <p className="mb-4 text-sm md:text-base">
+              A compact way to express the same result is through the quaternionic exponential:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="e^{\,\mathbf{u}\varphi} = \cos\varphi + \mathbf{u}\sin\varphi." />
+            <p className="mb-4 text-sm md:text-base">
+              This shows that every unit quaternion is an <strong>exponential of a pure imaginary quaternion</strong>, analogous to how complex numbers on the unit circle are <InlineMath math="e^{i\theta}" />. This exponential map is smooth and periodic, wrapping <InlineMath math="\mathbb{R}^3" /> (the Lie algebra) onto <InlineMath math="S^3" /> (the Lie group).
+            </p>
+          </section>
+
+          {/* Section 2.2 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.2 Exponential and Logarithm on <InlineMath math="S^3" /></h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The exponential and logarithm connect the curved geometry of <InlineMath math="S^3" /> to its tangent space at the identity. They are the tools that let us linearize rotations, compute interpolations, and transition between angles and coordinates.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">Exponential Definition</h4>
+            <p className="mb-4 text-sm md:text-base">
+              For any quaternion <InlineMath math="q = a + \mathbf{v}" />, we define:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="e^{q} = e^{a}\Bigl(\cos|\mathbf{v}| + \frac{\mathbf{v}}{|\mathbf{v}|}\sin|\mathbf{v}|\Bigr)," />
+            <p className="mb-4 text-sm md:text-base">
+              where the scalar part produces scaling (like in <InlineMath math="\mathbb{C}" />), and the vector part produces rotation. When <InlineMath math="q" /> is pure imaginary (<InlineMath math="a = 0" />), this gives the unit quaternion <InlineMath math="e^{\mathbf{v}} = \cos|\mathbf{v}| + (\mathbf{v}/|\mathbf{v}|)\sin|\mathbf{v}|" />.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">Logarithm Definition</h4>
+            <p className="mb-4 text-sm md:text-base">
+              Given a unit quaternion <InlineMath math="q = \cos\varphi + \mathbf{u}\sin\varphi" />, its logarithm returns to the tangent space:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="\log q = \mathbf{u}\varphi + 2\pi k \mathbf{u}, \quad k \in \mathbb{Z}." />
+            <p className="mb-4 text-sm md:text-base">
+              The multivalued nature of the logarithm mirrors the periodic wrapping of <InlineMath math="S^3" /> — every additional <InlineMath math="2\pi" /> rotation around <InlineMath math="\mathbf{u}" /> brings us to <InlineMath math="-q" />, and only after a <strong><InlineMath math="4\pi" /></strong> rotation do we return to the same quaternion.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">The <InlineMath math="4\pi" /> Identity</h4>
+            <p className="mb-4 text-sm md:text-base">
+              The key periodicity is:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="e^{\,\mathbf{u}(\varphi + 2\pi)} = -e^{\,\mathbf{u}\varphi}, \quad e^{\,\mathbf{u}(\varphi + 4\pi)} = e^{\,\mathbf{u}\varphi}." />
+            <p className="mb-4 text-sm md:text-base">
+              This means quaternions behave like <strong>spinors</strong> — mathematical entities that must rotate twice (720°) to return to their original state. This <InlineMath math="4\pi" /> property lies at the heart of quantum spin and the difference between <InlineMath math="\mathrm{SU}(2)" /> and <InlineMath math="\mathrm{SO}(3)" />.
+            </p>
+          </section>
+
+          {/* Section 2.3 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.3 <InlineMath math="\mathrm{SU}(2)" /> and <InlineMath math="\mathrm{SO}(3)" />: The Double Cover</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The space of unit quaternions <InlineMath math="S^3" /> is isomorphic to the Lie group <InlineMath math="\mathrm{SU}(2)" />, while the space of 3D rotations is the group <InlineMath math="\mathrm{SO}(3)" />. The relation between them is simple but profound:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="S^3 / \{\pm1\} \cong \mathrm{SO}(3)." />
+            <p className="mb-4 text-sm md:text-base">
+              This means that for every rotation in 3D space, there are two corresponding quaternions — <InlineMath math="q" /> and <InlineMath math="-q" />. They represent the same physical orientation but differ by a full spinor phase reversal.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">The Covering Map</h4>
+            <p className="mb-4 text-sm md:text-base">
+              We define the map <InlineMath math="\Pi: S^3 \to \mathrm{SO}(3)" /> as:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="\Pi(q)(\mathbf{v}) = q\,\mathbf{v}\,q^{-1}," />
+            <p className="mb-4 text-sm md:text-base">
+              which acts by rotating a 3D vector <InlineMath math="\mathbf{v}" /> via quaternionic conjugation. This map is smooth, surjective, and its kernel is <InlineMath math="\{\pm1\}" />. Thus, <InlineMath math="S^3" /> covers <InlineMath math="\mathrm{SO}(3)" /> twice — an essential feature that distinguishes classical and quantum rotations.
+            </p>
+
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+              <p className="font-semibold mb-2">Physical Meaning.</p>
+              <p>A rotation by <InlineMath math="2\pi" /> (360°) changes <InlineMath math="q" /> to <InlineMath math="-q" />, a distinct point on <InlineMath math="S^3" />. Only after rotating another <InlineMath math="2\pi" /> does the quaternion return to its original value. This doubling of the angle is why electron spin requires a 720° rotation to restore its phase.</p>
+            </div>
+          </section>
+
+          {/* Section 2.4 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.4 Geometry of <InlineMath math="S^3" />: Great Circles and Geodesics</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The 3-sphere <InlineMath math="S^3" /> can be thought of as all unit quaternions. Like circles on <InlineMath math="S^1" /> or great circles on <InlineMath math="S^2" />, the natural paths on <InlineMath math="S^3" /> — those with constant speed and minimal distance — are called <strong>geodesics</strong>.
+            </p>
+
+            <p className="mb-4 text-sm md:text-base">
+              A geodesic on <InlineMath math="S^3" /> through the identity is:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="\gamma(t) = e^{\,\mathbf{X}t}, \quad |\mathbf{X}| = 1," />
+            <p className="mb-4 text-sm md:text-base">
+              a great circle parameterized by arc length. The exponential map sends straight lines in the tangent space (pure imaginary quaternions) to great circles on the 3-sphere.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">Distance on <InlineMath math="S^3" /></h4>
+            <p className="mb-4 text-sm md:text-base">
+              The distance between two points <InlineMath math="q_1, q_2 \in S^3" /> is:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="d_{S^3}(q_1, q_2) = \arccos(\langle q_1, q_2 \rangle)," />
+            <p className="mb-4 text-sm md:text-base">
+              where <InlineMath math="\langle \cdot, \cdot \rangle" /> is the Euclidean inner product in <InlineMath math="\mathbb{R}^4" />. For rotations, this corresponds to a physical rotation angle:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="\Theta = 2\arccos(|\langle q_1, q_2 \rangle|)," />
+            <p className="mb-4 text-sm md:text-base">
+              reflecting the identification <InlineMath math="q \sim -q" />.
+            </p>
+
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+              <p className="font-semibold mb-2">Intuition.</p>
+              <p>On <InlineMath math="S^3" />, the shortest path between orientations is always a great circle — the geodesic. In computer graphics and robotics, quaternion interpolation (SLERP) moves along this great circle at constant angular velocity, ensuring smooth rotation without gimbal lock.</p>
+            </div>
+          </section>
+
+          {/* Section 2.5 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.5 Tangent Spaces, Frames, and the Maurer–Cartan Form</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The tangent space of <InlineMath math="S^3" /> at any point is three-dimensional and can be identified with the imaginary quaternions. The <strong>left-invariant frame</strong> propagates a basis at the identity (say, <InlineMath math="i, j, k" />) to every other point via left multiplication. This makes <InlineMath math="S^3" /> a perfectly symmetric, curved space — a group manifold.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">The Maurer–Cartan Form</h4>
+            <p className="mb-4 text-sm md:text-base">
+              The <strong>Maurer–Cartan form</strong> <InlineMath math="\omega = q^{-1}dq" /> encodes infinitesimal rotations within <InlineMath math="S^3" />. It satisfies the <strong>Maurer–Cartan equation</strong>:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="d\omega + \tfrac{1}{2}[\omega \wedge \omega] = 0," />
+            <p className="mb-4 text-sm md:text-base">
+              expressing the intrinsic curvature of <InlineMath math="S^3" />. This form lets us compute curvature, connections, and later, spectral operators like the Laplacian.
+            </p>
+          </section>
+
+          {/* Section 2.6 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.6 The Hopf Fibration: Linking the 3-Sphere to the 2-Sphere</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              The Hopf fibration is one of the most beautiful structures in mathematics. It says that <InlineMath math="S^3" /> can be viewed as a bundle of circles (fibers) over <InlineMath math="S^2" /> (the unit sphere in <InlineMath math="\mathbb{R}^3" />). Each point on <InlineMath math="S^2" /> corresponds to an axis of rotation, and each circle fiber represents all quaternions sharing that axis but differing by phase (spin orientation).
+            </p>
+
+            <p className="mb-4 text-sm md:text-base">
+              The map:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="h: S^3 \to S^2, \quad h(q) = q\,i\,q^{-1}," />
+            <p className="mb-4 text-sm md:text-base">
+              projects a quaternion to its rotation axis. The fiber <InlineMath math="q e^{i\theta}" /> sweeps a full circle of spin orientations around that axis.
+            </p>
+
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+              <p className="font-semibold mb-2">Visualizing the Hopf Fibration.</p>
+              <p>Under stereographic projection, <InlineMath math="S^3" /> appears as <InlineMath math="\mathbb{R}^3" />. The Hopf fibers become linked circles filling all space — each pair of circles interlocked exactly once. This illustrates how quaternionic rotation weaves orientation into topology.</p>
+            </div>
+          </section>
+
+          {/* Section 2.7 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.7 Practical Visualization and Interpolation</h2>
+
+            <p className="mb-4 text-sm md:text-base">
+              Quaternions are more than algebraic curiosities — they are the smoothest way to compute and visualize rotations.
+            </p>
+
+            <ul className="list-disc ml-4 md:ml-6 lg:ml-8 text-sm md:text-base space-y-3 mb-6">
+              <li><strong>Great Circles.</strong> Fixing <InlineMath math="\mathbf{u}" />, the curve <InlineMath math="\gamma(t) = \cos t + \mathbf{u}\sin t" /> traces a great circle on <InlineMath math="S^3" />. In 3D space, this corresponds to a continuous rotation about axis <InlineMath math="\mathbf{u}" /> with physical angle <InlineMath math="2t" />.</li>
+              <li><strong>Stereographic Projection.</strong> We can project <InlineMath math="S^3" /> into <InlineMath math="\mathbb{R}^3" /> for visualization. The Hopf circles appear as intertwined loops, showing how orientations wrap around each other.</li>
+              <li><strong>SLERP (Spherical Linear Interpolation).</strong> Given two orientations <InlineMath math="q_0, q_1" />, the smooth interpolation between them is:
+                <div className="overflow-x-auto"><BlockMath math="\operatorname{SLERP}(q_0, q_1; t) = q_0 (q_0^{-1}q_1)^t, \quad t \in [0,1]." />
+                This follows a great circle at constant angular speed — perfect for animation, robotics, and aerospace guidance.
+              </li>
+            </ul>
+          </section>
+
+          {/* Section 2.8 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.8 Worked Examples</h2>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">Example 2.1 — Axis–Angle Conversion</h4>
+            <p className="mb-4 text-sm md:text-base">
+              Given axis <InlineMath math="\mathbf{u} = (0,0,1)" /> and physical angle <InlineMath math="\theta = 90°" />, the quaternion is:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="q = \cos(45°) + k\sin(45°) = \tfrac{\sqrt{2}}{2} + \tfrac{\sqrt{2}}{2}k." />
+            <p className="mb-4 text-sm md:text-base">
+              Applying <InlineMath math="\mathbf{v}' = q\mathbf{v}q^{-1}" /> rotates vectors 90° about the z-axis.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">Example 2.2 — Composition of Rotations</h4>
+            <p className="mb-4 text-sm md:text-base">
+              Two rotations with the same axis <InlineMath math="\mathbf{u}" /> add directly:
+            </p>
+            <div className="overflow-x-auto"><BlockMath math="(\cos\varphi_2 + \mathbf{u}\sin\varphi_2)(\cos\varphi_1 + \mathbf{u}\sin\varphi_1) = \cos(\varphi_1 + \varphi_2) + \mathbf{u}\sin(\varphi_1 + \varphi_2)." />
+            <p className="mb-4 text-sm md:text-base">
+              Rotations with different axes combine non-trivially, producing a new axis through the quaternionic product.
+            </p>
+
+            <h4 className="text-base md:text-lg font-bold text-gray-900 mt-8 mb-4">Example 2.3 — The <InlineMath math="4\pi" /> Experiment</h4>
+            <p className="mb-4 text-sm md:text-base">
+              A simple physical model (like Feynman's belt trick) demonstrates that a 360° rotation introduces a twist that only resolves after a full 720° turn. Quaternions capture this inherently: <InlineMath math="q" /> and <InlineMath math="-q" /> differ by 360°, yet correspond to the same physical orientation.
+            </p>
+          </section>
+
+          {/* Section 2.9 */}
+          <section className="mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900 mb-6">2.9 Summary</h2>
+
+            <ul className="list-disc ml-4 md:ml-6 lg:ml-8 text-sm md:text-base space-y-3 mb-6">
+              <li>Every unit quaternion represents a rotation on <InlineMath math="S^3" /> through <InlineMath math="q = \cos\varphi + \mathbf{u}\sin\varphi = e^{\mathbf{u}\varphi}" />.</li>
+              <li><InlineMath math="S^3" /> double-covers <InlineMath math="\mathrm{SO}(3)" />, leading to the spinor property and <InlineMath math="4\pi" /> identity.</li>
+              <li>The 3-sphere's geodesics are great circles corresponding to constant-axis rotations.</li>
+              <li>The Hopf fibration links spin (<InlineMath math="S^1" />) and direction (<InlineMath math="S^2" />), giving <InlineMath math="S^3" /> its intertwined topology.</li>
+              <li>Quaternion interpolation (SLERP) travels along these great circles, providing smooth, stable, and singularity-free motion between orientations.</li>
+            </ul>
+
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">
+              <p className="font-semibold mb-2">Takeaway.</p>
+              <p>Rotation, spin, and orientation are not separate phenomena — they are manifestations of motion along <InlineMath math="S^3" />, the quaternionic sphere of coherence.</p>
+            </div>
+          </section>
+
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="mt-12 pt-6 border-t-2 border-blue-200">
+          <Link href="/quaternionic-spectral-geometry-book" className="inline-flex items-center gap-2 text-blue-600 text-sm md:text-base hover:text-blue-800 transition-colors" data-testid="link-back-to-book-bottom">
+            <ArrowLeft className="w-4 h-4" />
+            Back to Table of Contents
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
