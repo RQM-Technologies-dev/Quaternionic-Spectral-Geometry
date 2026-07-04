@@ -1,0 +1,14 @@
+[
+  {"symbol": "H", "latex": "\\mathbb{H}", "meaning": "Quaternion algebra", "rootRef": "qsg.core.quaternion"},
+  {"symbol": "C", "latex": "\\mathbb{C}", "meaning": "Complex numbers", "rootRef": "qsg.core.quaternion-matrix"},
+  {"symbol": "M_2(C)", "latex": "M_2(\\mathbb{C})", "meaning": "Complex 2 by 2 matrices used for the quaternion bridge", "rootRef": "qsg.core.quaternion-matrix"},
+  {"symbol": "S^3", "latex": "S^3", "meaning": "Unit-quaternion 3-sphere", "rootRef": "qsg.core.s3"},
+  {"symbol": "SU(2)", "latex": "SU(2)", "meaning": "Special unitary group identified with unit quaternions", "rootRef": "qsg.core.su2"},
+  {"symbol": "M", "latex": "M = S^3 \\times \\mathbb{R}", "meaning": "QSG model manifold", "rootRef": "qsg.core.manifold"},
+  {"symbol": "q", "latex": "q = \\cos(\\phi) + u\\sin(\\phi)", "meaning": "Unit-quaternion rotor coordinate", "rootRef": "qsg.core.rotation-form"},
+  {"symbol": "A", "latex": "\\mathcal{A}", "meaning": "Observable algebra", "rootRef": "qsg.core.observable-algebra"},
+  {"symbol": "H", "latex": "\\mathcal{H}", "meaning": "Hilbert space or finite state-space analogue", "rootRef": "qsg.core.hilbert-space"},
+  {"symbol": "D", "latex": "D", "meaning": "Spectral or Dirac-type operator", "rootRef": "qsg.core.spectral-operator"},
+  {"symbol": "[D, pi(a)]", "latex": "[D,\\pi(a)]", "meaning": "Bounded-commutator target or finite commutator analogue", "rootRef": "qsg.core.commutator"},
+  {"symbol": "V(s)", "latex": "V(s)", "meaning": "Potential or spectral-well profile in the anchor coordinate", "rootRef": "qsg.core.spectral-well"}
+]

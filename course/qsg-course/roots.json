@@ -1,0 +1,163 @@
+[
+  {
+    "id": "qsg.core.quaternion",
+    "label": "Quaternion Algebra",
+    "status": "standard-background",
+    "summary": "Quaternions extend complex numbers with three imaginary basis directions and noncommutative multiplication.",
+    "sourceFiles": ["CANON.md", "GLOSSARY.md", "examples/quaternion-as-complex-2x2.md"]
+  },
+  {
+    "id": "qsg.core.quaternion-matrix",
+    "label": "Quaternion To Complex Matrix Bridge",
+    "status": "definition",
+    "summary": "The first formal bridge represents quaternionic coordinates through the standard embedding H -> M_2(C).",
+    "sourceFiles": ["CANON.md", "SPECTRAL_TRIPLE_ANCHOR.md", "examples/quaternion-as-complex-2x2.md"]
+  },
+  {
+    "id": "qsg.core.manifold",
+    "label": "QSG Model Manifold",
+    "status": "definition",
+    "summary": "The basic QSG stage is M = S^3 x R, with unit-quaternion orientation and a real resonance or anchor coordinate.",
+    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+  },
+  {
+    "id": "qsg.core.s3",
+    "label": "Unit Quaternion 3-Sphere",
+    "status": "standard-background",
+    "summary": "Unit quaternions form S^3 and provide the compact hypersphere prototype for QSG.",
+    "sourceFiles": ["CANON.md", "GLOSSARY.md", "references/su2-spinors-quaternions.md"]
+  },
+  {
+    "id": "qsg.core.su2",
+    "label": "SU(2) Identification",
+    "status": "standard-background",
+    "summary": "S^3 is identified with SU(2), connecting quaternionic rotors, spinors, and matrix representations.",
+    "sourceFiles": ["CANON.md", "SPECTRAL_TRIPLE_ANCHOR.md", "references/su2-spinors-quaternions.md"]
+  },
+  {
+    "id": "qsg.core.rotation-form",
+    "label": "Rotor Coordinate Form",
+    "status": "definition",
+    "summary": "A unit quaternion can be written q = cos(phi) + u sin(phi), separating angular position and oriented imaginary axis.",
+    "sourceFiles": ["CANON.md", "GLOSSARY.md"]
+  },
+  {
+    "id": "qsg.core.slice",
+    "label": "Quaternionic Slices",
+    "status": "definition",
+    "summary": "A slice q = a + bI selects a complex plane inside H and gives local complex structure inside quaternionic geometry.",
+    "sourceFiles": ["CANON.md", "GLOSSARY.md"]
+  },
+  {
+    "id": "qsg.core.metric-geometry",
+    "label": "Metric And Differential Geometry On S^3",
+    "status": "standard-background",
+    "summary": "The S^3/SU(2) side supports charts, invariant metrics, tangent directions, curvature, and Laplacian operators.",
+    "sourceFiles": ["CANON.md", "FORMALIZATION_ROADMAP.md"]
+  },
+  {
+    "id": "qsg.core.observable-algebra",
+    "label": "Observable Algebra",
+    "status": "definition",
+    "summary": "QSG examples should state an algebra A of observables acting by a representation pi on a state space.",
+    "sourceFiles": ["CANON.md", "SPECTRAL_TRIPLE_ANCHOR.md", "examples/toy-su2-spectral-triple.md"]
+  },
+  {
+    "id": "qsg.core.hilbert-space",
+    "label": "Complex Hilbert Space",
+    "status": "definition",
+    "summary": "The minimum formal core uses complex spinor-valued, matrix-valued, finite, or truncated state spaces before native quaternionic Hilbert spaces.",
+    "sourceFiles": ["CANON.md", "SPECTRAL_TRIPLE_ANCHOR.md"]
+  },
+  {
+    "id": "qsg.core.spectral-operator",
+    "label": "Spectral Operator",
+    "status": "definition",
+    "summary": "A candidate operator D should state its domain or finite substitute, spectrum, representation action, and commutator behavior.",
+    "sourceFiles": ["CANON.md", "SPECTRAL_TRIPLE_ANCHOR.md", "examples/toy-su2-spectral-triple.md"]
+  },
+  {
+    "id": "qsg.core.commutator",
+    "label": "Commutator Check",
+    "status": "definition",
+    "summary": "The commutator [D, pi(a)] records how the spectral operator detects variation in observables.",
+    "sourceFiles": ["CANON.md", "SPECTRAL_TRIPLE_ANCHOR.md"]
+  },
+  {
+    "id": "qsg.core.compact-prototype",
+    "label": "Compact S^3 Prototype",
+    "status": "prototype",
+    "summary": "The first inspectable spectral-triple target is a compact S^3 ~= SU(2) model with algebra, Hilbert space, operator, and bounded-commutator checks.",
+    "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "examples/toy-su2-spectral-triple.md"]
+  },
+  {
+    "id": "qsg.core.spectral-triple-anchor",
+    "label": "Spectral-Triple Anchor",
+    "status": "prototype",
+    "summary": "QSG should first ask whether a compact prototype, and later anchored variants, satisfy honest spectral-triple axioms or identify the missing checks.",
+    "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "BRIDGE_TO_SPECTRAL_TRIPLES.md"]
+  },
+  {
+    "id": "qsg.core.anchor-coordinate",
+    "label": "Anchor Coordinate",
+    "status": "definition",
+    "summary": "The real coordinate s in S^3 x R tracks resonance level, anchor height, spectral selection, or deformation in each example.",
+    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+  },
+  {
+    "id": "qsg.core.spectral-well",
+    "label": "Spectral Well",
+    "status": "definition",
+    "summary": "A spectral well is a function, region, potential, or finite ladder along s that selects or localizes spectral modes.",
+    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+  },
+  {
+    "id": "qsg.core.anchored-model",
+    "label": "Anchored S^3 x R Model",
+    "status": "prototype",
+    "summary": "The noncompact anchored model requires compactification, confinement, finite truncation, or a noncompact spectral-triple framework before compact-resolvent claims.",
+    "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "examples/anchored-spectral-geometry.md"]
+  },
+  {
+    "id": "qsg.ext.agqf",
+    "label": "Anchor-Generating Quaternionic Factorial",
+    "status": "conjectural-extension",
+    "summary": "AGQF material is an extension lens for resonance wells and quantization-like organization, not part of the minimum spectral-triple proof target.",
+    "sourceFiles": ["course/storefront-snapshot/README.md"]
+  },
+  {
+    "id": "qsg.ext.coherence",
+    "label": "Quaternionic Spectral Coherence",
+    "status": "conjectural-extension",
+    "summary": "Coherence should be defined example by example as persistence of phase, orientation, resonance level, or spectral relation under a stated action.",
+    "sourceFiles": ["CANON.md"]
+  },
+  {
+    "id": "qsg.ext.special-functions",
+    "label": "Special Functions And Operators",
+    "status": "conjectural-extension",
+    "summary": "Special-function material should be scoped as computational and exploratory unless tied to a precise proved operator statement.",
+    "sourceFiles": ["course/storefront-snapshot/README.md"]
+  },
+  {
+    "id": "qsg.ext.computational",
+    "label": "Computational Quaternionic Geometry",
+    "status": "application-lens",
+    "summary": "Algorithms, simulations, and visualizations are implementation lenses derived from the root coordinate and operator framework.",
+    "sourceFiles": ["course/storefront-snapshot/README.md"]
+  },
+  {
+    "id": "qsg.ext.applications",
+    "label": "Applications And Frontiers",
+    "status": "application-lens",
+    "summary": "Applications connect QSG vocabulary to signal processing, optics, robotics, navigation, and quantum-system interpretation without asserting completed physics.",
+    "sourceFiles": ["course/storefront-snapshot/README.md"]
+  },
+  {
+    "id": "qsg.ext.zeta-frontier",
+    "label": "Zeta And Frontier Material",
+    "status": "frontier-question",
+    "summary": "Zeta, prime-structure, and frontier material should be marked as open research direction rather than solved result.",
+    "sourceFiles": ["course/storefront-snapshot/README.md"]
+  }
+]

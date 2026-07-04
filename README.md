@@ -62,3 +62,5 @@ The first compact prototype should be checked before the anchored $S^3 \times \m
 ## Course Material
 
 The current storefront course contains more expanded teaching material than this early canon. A repo-local snapshot is maintained in [course/storefront-snapshot](course/storefront-snapshot/README.md) so the course information can be preserved here first, then normalized into durable QSG roots over time.
+
+The normalized course trunk lives in [course/qsg-course](course/qsg-course/README.md). Storefront course pages should treat that directory as the canonical source for QSG roots, claim statuses, chapter structure, glossary terms, notation, and route-to-root derivation metadata.

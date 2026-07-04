@@ -1,0 +1,313 @@
+{
+  "courseTitle": "Quaternionic Spectral Geometry",
+  "courseSubtitle": "A coordinate and operator framework for quaternionic hypersphere geometry",
+  "courseHubPath": "/learn/quaternionic-spectral-geometry",
+  "canonicalRepo": "https://github.com/RQM-Technologies-dev/quaternionic-spectral-geometry",
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "number": 1,
+      "title": "The Geometry of Numbers",
+      "subtitle": "From real to complex to quaternionic",
+      "path": "/chapter-1-geometry-of-numbers",
+      "difficulty": "Beginner",
+      "category": "Foundations",
+      "estimatedTime": "25 min",
+      "claimStatus": "standard-background",
+      "rootRefs": ["qsg.core.quaternion", "qsg.core.quaternion-matrix", "qsg.core.s3"],
+      "objectives": [
+        "Understand the progression from real to complex to quaternionic numbers.",
+        "Use quaternion basis elements and noncommutativity correctly.",
+        "Visualize unit quaternions as points on S^3.",
+        "Apply conjugation, norm, and inverse as geometric operations."
+      ],
+      "formulas": ["q = a + bi + cj + dk", "i^2 = j^2 = k^2 = ijk = -1", "S^3 = {q in H : ||q|| = 1}"],
+      "checkpointPrompts": ["Why do quaternions require more than one imaginary direction?", "Why is noncommutativity geometrically meaningful?"],
+      "checkpointAnswers": ["They preserve scalar plus three oriented imaginary components, so phase can carry direction.", "It reflects the fact that rotations and oriented transformations generally depend on order."],
+      "finalTakeaway": "The numerical root of QSG is not a replacement for real or complex numbers; it is a way to preserve orientation-sensitive structure.",
+      "claimScopeNote": "Standard quaternion background and coordinate setup.",
+      "sections": [
+        {"id": "section-1-1", "number": "1.1", "title": "Historical progression: R -> C -> H", "rootRefs": ["qsg.core.quaternion"], "claimStatus": "standard-background"},
+        {"id": "section-1-2", "number": "1.2", "title": "Why Hamilton's discovery matters geometrically", "rootRefs": ["qsg.core.quaternion"], "claimStatus": "standard-background"},
+        {"id": "section-1-3", "number": "1.3", "title": "Quaternion basis and noncommutativity", "rootRefs": ["qsg.core.quaternion"], "claimStatus": "standard-background"},
+        {"id": "section-1-4", "number": "1.4", "title": "Real, complex, and quaternionic planes visualized", "rootRefs": ["qsg.core.quaternion", "qsg.core.slice"], "claimStatus": "standard-background"},
+        {"id": "section-1-5", "number": "1.5", "title": "The unit hypersphere S^3", "rootRefs": ["qsg.core.s3"], "claimStatus": "standard-background"},
+        {"id": "section-1-6", "number": "1.6", "title": "Conjugation, norm, and inverse", "rootRefs": ["qsg.core.quaternion"], "claimStatus": "standard-background"}
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "number": 2,
+      "title": "The Quaternionic Rotation Form",
+      "subtitle": "q = cos(phi) + u sin(phi) and the 3-sphere",
+      "path": "/chapter-2-quaternionic-rotation",
+      "difficulty": "Beginner",
+      "category": "Foundations",
+      "estimatedTime": "30 min",
+      "claimStatus": "standard-background",
+      "rootRefs": ["qsg.core.rotation-form", "qsg.core.su2", "qsg.core.s3"],
+      "objectives": [
+        "Derive the rotation form q = cos(phi) + u sin(phi).",
+        "Connect unit quaternions to SU(2) and SO(3).",
+        "Explain the double-cover and 4pi rotation identity.",
+        "Read geodesics on S^3 as great-circle rotor motion."
+      ],
+      "formulas": ["q = cos(phi) + u sin(phi)", "S^3 ~= SU(2)", "SU(2) -> SO(3)"],
+      "checkpointPrompts": ["What does u carry in q = cos(phi) + u sin(phi)?", "Why does SU(2) appear naturally?"],
+      "checkpointAnswers": ["u carries the oriented imaginary axis of the rotor.", "Unit quaternions and SU(2) describe the same compact group structure through complex matrices."],
+      "finalTakeaway": "The rotation form is the first compact handle for angle and direction in one object.",
+      "claimScopeNote": "Standard quaternionic and Lie-group background used as QSG coordinate vocabulary.",
+      "sections": [
+        {"id": "section-2-1", "number": "2.1", "title": "Deriving q(t) = cos(phi) + u sin(phi)", "rootRefs": ["qsg.core.rotation-form"], "claimStatus": "standard-background"},
+        {"id": "section-2-2", "number": "2.2", "title": "Connection to SU(2) and SO(3)", "rootRefs": ["qsg.core.su2"], "claimStatus": "standard-background"},
+        {"id": "section-2-3", "number": "2.3", "title": "4pi rotation identity and topology of spin", "rootRefs": ["qsg.core.su2"], "claimStatus": "standard-background"},
+        {"id": "section-2-4", "number": "2.4", "title": "Geodesics, tangent spaces, and Hopf fibration", "rootRefs": ["qsg.core.s3", "qsg.core.metric-geometry"], "claimStatus": "standard-background"},
+        {"id": "section-2-5", "number": "2.5", "title": "Rotation as movement along great circles of S^3", "rootRefs": ["qsg.core.rotation-form", "qsg.core.s3"], "claimStatus": "standard-background"}
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "number": 3,
+      "title": "Differential Geometry on S^3",
+      "subtitle": "Manifold structure and metrics",
+      "path": "/chapter-3-differential-geometry-s3",
+      "difficulty": "Intermediate",
+      "category": "Foundations",
+      "estimatedTime": "35 min",
+      "claimStatus": "standard-background",
+      "rootRefs": ["qsg.core.s3", "qsg.core.su2", "qsg.core.metric-geometry"],
+      "objectives": [
+        "Describe S^3 as a smooth manifold and Lie group.",
+        "Use invariant vector fields and metrics on SU(2).",
+        "Relate curvature and volume to the hypersphere model.",
+        "Use the S^3 Laplacian as a bridge to spectra."
+      ],
+      "formulas": ["vol(S^3) = 2 pi^2", "Delta_{S^3} eigenvalues: ell(ell+2)"],
+      "checkpointPrompts": ["Why does QSG start from S^3 before S^3 x R?", "What operator first connects geometry to spectra?"],
+      "checkpointAnswers": ["S^3 is compact and standard enough to support cleaner definitions first.", "The Laplacian or a Dirac-type operator turns geometry into spectral data."],
+      "finalTakeaway": "Differential geometry supplies the motion and variation tools needed before spectral operators are introduced.",
+      "claimScopeNote": "Standard S^3/SU(2) geometry used as the compact QSG base.",
+      "sections": [
+        {"id": "section-3-1", "number": "3.1", "title": "Coordinate charts and bi-invariant metric", "rootRefs": ["qsg.core.metric-geometry"], "claimStatus": "standard-background"},
+        {"id": "section-3-2", "number": "3.2", "title": "SU(2) Lie group structure and invariant vector fields", "rootRefs": ["qsg.core.su2", "qsg.core.metric-geometry"], "claimStatus": "standard-background"},
+        {"id": "section-3-3", "number": "3.3", "title": "Connection forms, curvature, and volume measure", "rootRefs": ["qsg.core.metric-geometry"], "claimStatus": "standard-background"},
+        {"id": "section-3-4", "number": "3.4", "title": "Laplacian on S^3 and eigenvalues", "rootRefs": ["qsg.core.metric-geometry", "qsg.core.spectral-operator"], "claimStatus": "standard-background"},
+        {"id": "section-3-5", "number": "3.5", "title": "Parallel transport and curvature-induced phase", "rootRefs": ["qsg.core.metric-geometry"], "claimStatus": "standard-background"}
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "number": 4,
+      "title": "Spectral Calculus",
+      "subtitle": "Operators, eigenvalues, and resonance",
+      "path": "/chapter-4-spectral-calculus",
+      "difficulty": "Intermediate",
+      "category": "Calculus & Spectral Theory",
+      "estimatedTime": "40 min",
+      "claimStatus": "definition",
+      "rootRefs": ["qsg.core.spectral-operator", "qsg.core.commutator", "qsg.core.observable-algebra"],
+      "objectives": [
+        "State operators, spectra, and functional calculus as QSG tools.",
+        "Use Rayleigh quotients and variational language cautiously.",
+        "Connect spectral modes to geometry without overclaiming physical interpretation.",
+        "Prepare the algebra, representation, and commutator checks."
+      ],
+      "formulas": ["[D, pi(a)] = D pi(a) - pi(a) D", "D_M = D_{S^3} + D_s + V(s)"],
+      "checkpointPrompts": ["What must be specified before an operator is meaningful?", "What does a commutator test?"],
+      "checkpointAnswers": ["The domain or finite substitute, state space, algebra action, and intended spectral behavior.", "It tests how the operator detects variation in an observable."],
+      "finalTakeaway": "Spectral calculus is where QSG becomes an operator framework rather than only coordinate language.",
+      "claimScopeNote": "Definitions and candidate operators, not completed spectral-triple proofs.",
+      "sections": [
+        {"id": "section-4-1", "number": "4.1", "title": "Spectra of operators on SU(2) x R", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.anchored-model"], "claimStatus": "prototype"},
+        {"id": "section-4-2", "number": "4.2", "title": "Functional calculus and heat operators", "rootRefs": ["qsg.core.spectral-operator"], "claimStatus": "definition"},
+        {"id": "section-4-3", "number": "4.3", "title": "Rayleigh quotient and variational principles", "rootRefs": ["qsg.core.spectral-operator"], "claimStatus": "standard-background"},
+        {"id": "section-4-4", "number": "4.4", "title": "Resonance selection and geometric modes", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.spectral-well"], "claimStatus": "prototype"}
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "number": 5,
+      "title": "Spectral Theory on S^3 x R",
+      "subtitle": "Harmonic analysis and eigenfunctions",
+      "path": "/chapter-5-distributions-pde",
+      "difficulty": "Advanced",
+      "category": "Calculus & Spectral Theory",
+      "estimatedTime": "45 min",
+      "claimStatus": "prototype",
+      "rootRefs": ["qsg.core.manifold", "qsg.core.anchored-model", "qsg.core.compact-prototype", "qsg.core.spectral-triple-anchor"],
+      "objectives": [
+        "Separate compact S^3 prototypes from anchored S^3 x R models.",
+        "Use harmonic analysis on SU(2) as a spectral vocabulary.",
+        "Track when compact-resolvent claims are available and when they are not.",
+        "State the theorem target for a spectral-triple-compatible model."
+      ],
+      "formulas": ["M = S^3 x R", "(A, H, D)", "D_M = D_{S^3} + Gamma partial_s + V(s)"],
+      "checkpointPrompts": ["Why is compact S^3 easier than S^3 x R?", "What must be checked for a spectral triple?"],
+      "checkpointAnswers": ["S^3 is compact, while S^3 x R is noncompact unless the s-direction is controlled.", "One must specify A, H, D, representation, self-adjointness/domain, compact resolvent or finite analogue, and bounded commutators."],
+      "finalTakeaway": "The compact prototype is the honest first target; the anchored model is a later controlled extension.",
+      "claimScopeNote": "Prototype spectral geometry with explicit unresolved analytic checks.",
+      "sections": [
+        {"id": "section-5-1", "number": "5.1", "title": "Separation of variables on S^3", "rootRefs": ["qsg.core.s3", "qsg.core.compact-prototype"], "claimStatus": "standard-background"},
+        {"id": "section-5-2", "number": "5.2", "title": "Wigner D-matrices and quaternionic modes", "rootRefs": ["qsg.core.su2", "qsg.core.compact-prototype"], "claimStatus": "standard-background"},
+        {"id": "section-5-3", "number": "5.3", "title": "Fourier and Laplace transforms on SU(2) x R", "rootRefs": ["qsg.core.su2", "qsg.core.anchored-model"], "claimStatus": "prototype"},
+        {"id": "section-5-4", "number": "5.4", "title": "Spectral density and orthogonality relations", "rootRefs": ["qsg.core.spectral-operator"], "claimStatus": "standard-background"},
+        {"id": "section-5-5", "number": "5.5", "title": "Energy, frequency, and orientation in spectral space", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.manifold"], "claimStatus": "prototype"}
+      ]
+    },
+    {
+      "id": "chapter-6",
+      "number": 6,
+      "title": "The Anchor-Generating Quaternionic Factorial (AGQF)",
+      "subtitle": "Resonance wells and quantization",
+      "path": "/chapter-6-agqf-hub",
+      "difficulty": "Advanced",
+      "category": "Advanced Concepts",
+      "estimatedTime": "50 min",
+      "claimStatus": "conjectural-extension",
+      "rootRefs": ["qsg.core.anchor-coordinate", "qsg.core.spectral-well", "qsg.ext.agqf"],
+      "objectives": [
+        "Treat AGQF as an extension after the spectral stage is in view.",
+        "Connect anchor forms to resonance-well vocabulary.",
+        "Separate definitions and examples from conjectural quantization language.",
+        "Avoid presenting AGQF as part of the minimum spectral-triple core."
+      ],
+      "formulas": ["U_anchor(u) = -beta log(sin^m(pi u^2/2) + delta)"],
+      "checkpointPrompts": ["What is AGQF's status in the course?", "Why does the anchor coordinate matter here?"],
+      "checkpointAnswers": ["It is a conjectural extension and teaching lens, not a proved core axiom.", "It supplies the real direction where well-like profiles can be modeled."],
+      "finalTakeaway": "AGQF belongs downstream of the root spectral model and must remain claim-scoped.",
+      "claimScopeNote": "Conjectural extension; not a completed quantization theorem.",
+      "sections": [
+        {"id": "section-6-1", "number": "6.1", "title": "Definition of the quaternionic factorial", "rootRefs": ["qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
+        {"id": "section-6-2", "number": "6.2", "title": "Anchored AGQF forms", "rootRefs": ["qsg.core.anchor-coordinate", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
+        {"id": "section-6-3", "number": "6.3", "title": "Sine-prefactor lattice and zero boundaries", "rootRefs": ["qsg.ext.agqf", "qsg.core.spectral-well"], "claimStatus": "conjectural-extension"},
+        {"id": "section-6-4", "number": "6.4", "title": "Effective potential and resonance wells", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
+        {"id": "section-6-5", "number": "6.5", "title": "Quantization as confinement within resonance wells", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"}
+      ]
+    },
+    {
+      "id": "chapter-7",
+      "number": 7,
+      "title": "Quaternionic Spectral Coherence",
+      "subtitle": "Resonance, alignment, and field stability",
+      "path": "/chapter-7-spectral-coherence-hub",
+      "difficulty": "Advanced",
+      "category": "Advanced Concepts",
+      "estimatedTime": "40 min",
+      "claimStatus": "conjectural-extension",
+      "rootRefs": ["qsg.ext.coherence", "qsg.core.spectral-operator", "qsg.core.spectral-well"],
+      "objectives": [
+        "Define coherence example by example.",
+        "Relate alignment to phase, orientation, and resonance structure.",
+        "Use coherence metrics as scoped diagnostic tools.",
+        "Keep field-stability language tied to explicit models."
+      ],
+      "formulas": ["coherence = persistence under a stated action or operator"],
+      "checkpointPrompts": ["What makes a coherence claim mathematically inspectable?", "What must be avoided?"],
+      "checkpointAnswers": ["It states what is coherent, under which action, and how it is measured or bounded.", "Avoid implying universal field stability without a specified model."],
+      "finalTakeaway": "Coherence is useful only when the conserved or persistent structure is precisely named.",
+      "claimScopeNote": "Conjectural extension and diagnostic language.",
+      "sections": [
+        {"id": "section-7-1", "number": "7.1", "title": "Coherence as alignment of quaternionic phase vectors", "rootRefs": ["qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
+        {"id": "section-7-2", "number": "7.2", "title": "Interference and resonance on S^3", "rootRefs": ["qsg.core.s3", "qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
+        {"id": "section-7-3", "number": "7.3", "title": "Spectral coherence functions and correlation metrics", "rootRefs": ["qsg.core.spectral-operator", "qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
+        {"id": "section-7-4", "number": "7.4", "title": "Temporal equilibration of eigenvectors", "rootRefs": ["qsg.core.spectral-operator", "qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
+        {"id": "section-7-5", "number": "7.5", "title": "Visualizing coherence fields and transitions", "rootRefs": ["qsg.ext.coherence", "qsg.ext.computational"], "claimStatus": "application-lens"}
+      ]
+    },
+    {
+      "id": "chapter-8",
+      "number": 8,
+      "title": "Special Functions and Operators",
+      "subtitle": "The quaternionic factorial and spectral tools",
+      "path": "/chapter-8-special-functions-hub",
+      "difficulty": "Advanced",
+      "category": "Applications & Implementation",
+      "estimatedTime": "45 min",
+      "claimStatus": "conjectural-extension",
+      "rootRefs": ["qsg.ext.special-functions", "qsg.core.spectral-operator", "qsg.ext.zeta-frontier"],
+      "objectives": [
+        "Collect reusable computational and operator tools.",
+        "Separate ordinary operator theory from QSG-specific extensions.",
+        "Mark zeta and Euler-product connections as frontier material.",
+        "Avoid converting suggestive structure into proof claims."
+      ],
+      "formulas": ["operator tools must name A, H, D, and pi before spectral claims"],
+      "checkpointPrompts": ["How should zeta-linked material be labeled?", "What makes an operator reusable?"],
+      "checkpointAnswers": ["As a frontier question unless a precise theorem is proved.", "It has a stated domain or finite substitute, action, and computable behavior."],
+      "finalTakeaway": "Special tools are useful branches, but the root remains the precise operator model.",
+      "claimScopeNote": "Conjectural and frontier material where not backed by explicit theorem statements.",
+      "sections": [
+        {"id": "section-8-1", "number": "8.1", "title": "The quaternionic factorial operator", "rootRefs": ["qsg.ext.special-functions", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
+        {"id": "section-8-2", "number": "8.2", "title": "Relations to pi, Gamma(1/2), and spectral multipliers", "rootRefs": ["qsg.ext.special-functions"], "claimStatus": "conjectural-extension"},
+        {"id": "section-8-3", "number": "8.3", "title": "Concrete computations and examples", "rootRefs": ["qsg.ext.special-functions", "qsg.ext.computational"], "claimStatus": "example"},
+        {"id": "section-8-4", "number": "8.4", "title": "Connections to zeta and Euler products", "rootRefs": ["qsg.ext.zeta-frontier"], "claimStatus": "frontier-question"}
+      ]
+    },
+    {
+      "id": "chapter-9",
+      "number": 9,
+      "title": "Computational Quaternionic Geometry",
+      "subtitle": "Algorithms, simulation, and visualization",
+      "path": "/chapter-9-computational-hub",
+      "difficulty": "Intermediate",
+      "category": "Applications & Implementation",
+      "estimatedTime": "35 min",
+      "claimStatus": "application-lens",
+      "rootRefs": ["qsg.ext.computational", "qsg.core.quaternion-matrix", "qsg.core.spectral-operator"],
+      "objectives": [
+        "Represent quaternions and SU(2) rotations numerically.",
+        "Use finite truncations and visualizations as examples, not proofs.",
+        "Track which structures survive discretization.",
+        "Connect computational models back to canonical roots."
+      ],
+      "formulas": ["H -> M_2(C)", "finite truncation approximates the chosen infinite model only after stated choices"],
+      "checkpointPrompts": ["Why are finite models useful?", "What must a visualization trace back to?"],
+      "checkpointAnswers": ["They make spectra, commutators, and examples computable while replacing some analytic requirements.", "A canonical root such as S^3, SU(2), matrix bridge, or spectral operator."],
+      "finalTakeaway": "Computation is a branch that tests and visualizes the roots; it is not the canonical root itself.",
+      "claimScopeNote": "Application and implementation lens.",
+      "sections": [
+        {"id": "section-9-1", "number": "9.1", "title": "Numerical representation of quaternions and SU(2)", "rootRefs": ["qsg.core.quaternion-matrix", "qsg.core.su2"], "claimStatus": "application-lens"},
+        {"id": "section-9-2", "number": "9.2", "title": "Quaternionic FFTs and spectral filters", "rootRefs": ["qsg.ext.computational", "qsg.core.spectral-operator"], "claimStatus": "application-lens"},
+        {"id": "section-9-3", "number": "9.3", "title": "Visualization of wells, isosurfaces, and coherence fields", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.coherence", "qsg.ext.computational"], "claimStatus": "application-lens"},
+        {"id": "section-9-4", "number": "9.4", "title": "Python and Mathematica toolkits", "rootRefs": ["qsg.ext.computational"], "claimStatus": "application-lens"},
+        {"id": "section-9-5", "number": "9.5", "title": "Data structures for quaternionic tensors and signals", "rootRefs": ["qsg.ext.computational", "qsg.core.quaternion"], "claimStatus": "application-lens"}
+      ]
+    },
+    {
+      "id": "chapter-10",
+      "number": 10,
+      "title": "Applications and Frontiers",
+      "subtitle": "From theory to technology",
+      "path": "/chapter-10-applications-hub",
+      "difficulty": "Intermediate",
+      "category": "Applications & Implementation",
+      "estimatedTime": "30 min",
+      "claimStatus": "application-lens",
+      "rootRefs": ["qsg.ext.applications", "qsg.ext.zeta-frontier", "qsg.core.spectral-triple-anchor"],
+      "objectives": [
+        "Connect QSG to applications without implying completed physics.",
+        "Name open problems as open problems.",
+        "Trace each application back to roots in coordinates, operators, or spectra.",
+        "Keep the spectral-triple question visible as the mathematical test."
+      ],
+      "formulas": ["application lens = root model + stated interpretation + scoped evidence"],
+      "checkpointPrompts": ["What is the safest first mathematical ask?", "How should frontier material be framed?"],
+      "checkpointAnswers": ["Whether the compact S^3 prototype can be made into an honest spectral triple.", "As open research direction, not settled theory."],
+      "finalTakeaway": "QSG applications are branches; the trunk is the canonical coordinate and operator framework.",
+      "claimScopeNote": "Application lens and frontier questions.",
+      "sections": [
+        {"id": "section-10-1", "number": "10.1", "title": "Quaternionic signal processing and communication systems", "rootRefs": ["qsg.ext.applications", "qsg.core.quaternion"], "claimStatus": "application-lens"},
+        {"id": "section-10-2", "number": "10.2", "title": "Quaternionic optics and polarization analysis", "rootRefs": ["qsg.ext.applications", "qsg.core.su2"], "claimStatus": "application-lens"},
+        {"id": "section-10-3", "number": "10.3", "title": "Orientation tracking in robotics and navigation", "rootRefs": ["qsg.ext.applications", "qsg.core.rotation-form"], "claimStatus": "application-lens"},
+        {"id": "section-10-4", "number": "10.4", "title": "Quantum spectral interpretation of atomic systems", "rootRefs": ["qsg.ext.applications", "qsg.core.spectral-operator"], "claimStatus": "application-lens"},
+        {"id": "section-10-5", "number": "10.5", "title": "Open problems: spectral packing, prime structure, and zeta fields", "rootRefs": ["qsg.ext.zeta-frontier", "qsg.core.spectral-triple-anchor"], "claimStatus": "frontier-question"}
+      ]
+    }
+  ],
+  "appendices": [
+    "A: Quaternion algebra identities and proofs",
+    "B: Volume and curvature formulas on S^3",
+    "C: Quaternionic Fourier Transform derivations",
+    "D: Reference tables of spectral eigenmodes and constants"
+  ]
+}
