@@ -17,8 +17,8 @@
     "id": "qsg.core.manifold",
     "label": "QSG Model Manifold",
     "status": "definition",
-    "summary": "The basic QSG stage is M = S^3 x R, with unit-quaternion orientation and a real resonance or anchor coordinate.",
-    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+    "summary": "The basic QSG stage is M = S^3 x R, with normalized unit-quaternion orientation and a real logarithmic scale coordinate.",
+    "sourceFiles": ["CANON.md", "SCALE_COORDINATE.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.core.s3",
@@ -38,8 +38,8 @@
     "id": "qsg.core.rotation-form",
     "label": "Rotor Coordinate Form",
     "status": "definition",
-    "summary": "A unit quaternion can be written q = cos(phi) + u sin(phi), separating angular position and oriented imaginary axis.",
-    "sourceFiles": ["CANON.md", "GLOSSARY.md"]
+    "summary": "A unit quaternion can be written q = cos(phi) + n-hat sin(phi), separating angular position and oriented imaginary axis from the real scale coordinate.",
+    "sourceFiles": ["CANON.md", "GLOSSARY.md", "SCALE_COORDINATE.md"]
   },
   {
     "id": "qsg.core.slice",
@@ -73,7 +73,7 @@
     "id": "qsg.core.spectral-operator",
     "label": "Spectral Operator",
     "status": "definition",
-    "summary": "A candidate operator D should state its domain or finite substitute, spectrum, representation action, and commutator behavior.",
+    "summary": "A candidate operator D should state its domain or finite substitute, spectrum, representation action, commutator behavior, and metric choice.",
     "sourceFiles": ["CANON.md", "SPECTRAL_TRIPLE_ANCHOR.md", "examples/toy-su2-spectral-triple.md"]
   },
   {
@@ -94,42 +94,42 @@
     "id": "qsg.core.spectral-triple-anchor",
     "label": "Spectral-Triple Anchor",
     "status": "prototype",
-    "summary": "QSG should first ask whether a compact prototype, and later anchored variants, satisfy honest spectral-triple axioms or identify the missing checks.",
+    "summary": "QSG should first ask whether a compact prototype, and later scale-anchored variants, satisfy honest spectral-triple axioms or identify the missing checks.",
     "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "BRIDGE_TO_SPECTRAL_TRIPLES.md"]
   },
   {
     "id": "qsg.core.anchor-coordinate",
-    "label": "Anchor Coordinate",
+    "label": "Scale Coordinate",
     "status": "definition",
-    "summary": "The real coordinate s in S^3 x R tracks resonance level, anchor height, spectral selection, or deformation in each example.",
-    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+    "summary": "The real coordinate s = log(rho/rho_*) records logarithmic dilation; resonance level, anchor depth, and spectral selection arise from structures acting along it.",
+    "sourceFiles": ["CANON.md", "SCALE_COORDINATE.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.core.spectral-well",
-    "label": "Spectral Well",
+    "label": "Scale-Localized Spectral Well",
     "status": "definition",
-    "summary": "A spectral well is a function, region, potential, or finite ladder along s that selects or localizes spectral modes.",
-    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+    "summary": "A spectral well is a function, region, potential, or finite ladder along s that selects or localizes modes into preferred scale bands.",
+    "sourceFiles": ["CANON.md", "SCALE_COORDINATE.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.core.anchored-model",
-    "label": "Anchored S^3 x R Model",
+    "label": "Scale-Anchored S^3 x R Model",
     "status": "prototype",
-    "summary": "The noncompact anchored model requires compactification, confinement, finite truncation, or a noncompact spectral-triple framework before compact-resolvent claims.",
-    "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "examples/anchored-spectral-geometry.md"]
+    "summary": "The noncompact scale-anchored model requires compactification, confinement, finite truncation, or a noncompact spectral-triple framework before compact-resolvent claims.",
+    "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "SCALE_COORDINATE.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.ext.agqf",
     "label": "Anchor-Generating Quaternionic Factorial",
     "status": "conjectural-extension",
-    "summary": "AGQF material is an extension lens for resonance wells and quantization-like organization, not part of the minimum spectral-triple proof target.",
-    "sourceFiles": ["course/storefront-snapshot/README.md"]
+    "summary": "AGQF material is an extension lens for scale-localized resonance wells and quantization-like organization, not part of the minimum spectral-triple proof target.",
+    "sourceFiles": ["SCALE_COORDINATE.md", "course/storefront-snapshot/README.md"]
   },
   {
     "id": "qsg.ext.coherence",
     "label": "Quaternionic Spectral Coherence",
     "status": "conjectural-extension",
-    "summary": "Coherence should be defined example by example as persistence of phase, orientation, resonance level, or spectral relation under a stated action.",
+    "summary": "Coherence should be defined example by example as persistence of phase, orientation, scale localization, resonance level, or spectral relation under a stated action.",
     "sourceFiles": ["CANON.md"]
   },
   {
