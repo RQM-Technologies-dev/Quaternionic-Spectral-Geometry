@@ -46,7 +46,21 @@
     "label": "Quaternionic Slices",
     "status": "definition",
     "summary": "A slice q = a + bI selects a complex plane inside H and gives local complex structure inside quaternionic geometry.",
-    "sourceFiles": ["CANON.md", "GLOSSARY.md"]
+    "sourceFiles": ["CANON.md", "GLOSSARY.md", "QUATERNIONIC_FACTORIAL.md"]
+  },
+  {
+    "id": "qsg.core.quaternionic-factorial",
+    "label": "Scalar Quaternionic Factorial",
+    "status": "definition",
+    "summary": "For Re(q) > -1, F(q) = integral exp(-x)x^q dx = Gamma(q+1) within the complex slice containing q; its norm is axis-independent and its imaginary output follows the input axis.",
+    "sourceFiles": ["QUATERNIONIC_FACTORIAL.md", "experiments/quaternionic_factorial_slices.py"]
+  },
+  {
+    "id": "qsg.prototype.factorial-composition",
+    "label": "Cross-Slice And Operator Factorial",
+    "status": "prototype",
+    "summary": "Ordered products of factorial values carried by different quaternionic axes can be noncommutative; the next formal target is Gamma(T+1) for a finite SU(2)-aware operator T.",
+    "sourceFiles": ["QUATERNIONIC_FACTORIAL.md", "experiments/quaternionic_factorial_slices.py"]
   },
   {
     "id": "qsg.core.metric-geometry",
@@ -94,36 +108,36 @@
     "id": "qsg.core.spectral-triple-anchor",
     "label": "Spectral-Triple Anchor",
     "status": "prototype",
-    "summary": "QSG should first ask whether a compact prototype, and later scale-anchored variants, satisfy honest spectral-triple axioms or identify the missing checks.",
+    "summary": "QSG should first ask whether a compact prototype, and later scale-extended variants, satisfy honest spectral-triple axioms or identify the missing checks.",
     "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "BRIDGE_TO_SPECTRAL_TRIPLES.md"]
   },
   {
     "id": "qsg.core.anchor-coordinate",
     "label": "Scale Coordinate",
     "status": "definition",
-    "summary": "The real coordinate s = log(rho/rho_*) records logarithmic dilation; resonance level, anchor depth, and spectral selection arise from structures acting along it.",
+    "summary": "The real coordinate s = log(rho/rho_*) records logarithmic dilation; resonance level and spectral selection arise from optional structures acting along it.",
     "sourceFiles": ["CANON.md", "SCALE_COORDINATE.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.core.spectral-well",
     "label": "Scale-Localized Spectral Well",
     "status": "definition",
-    "summary": "A spectral well is a function, region, potential, or finite ladder along s that selects or localizes modes into preferred scale bands.",
+    "summary": "A spectral well is an optional function, region, potential, or finite ladder along s that selects or localizes modes into preferred scale bands.",
     "sourceFiles": ["CANON.md", "SCALE_COORDINATE.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.core.anchored-model",
     "label": "Scale-Anchored S^3 x R Model",
     "status": "prototype",
-    "summary": "The noncompact scale-anchored model requires compactification, confinement, finite truncation, or a noncompact spectral-triple framework before compact-resolvent claims.",
+    "summary": "A noncompact scale-anchored model requires compactification, confinement, finite truncation, or a noncompact spectral-triple framework before compact-resolvent claims.",
     "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "SCALE_COORDINATE.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.ext.agqf",
     "label": "Anchor-Generating Quaternionic Factorial",
     "status": "conjectural-extension",
-    "summary": "AGQF material is an extension lens for scale-localized resonance wells and quantization-like organization, not part of the minimum spectral-triple proof target.",
-    "sourceFiles": ["SCALE_COORDINATE.md", "course/storefront-snapshot/README.md"]
+    "summary": "AGQF is a downstream optional extension that adds anchor-generating factors or well profiles after the scalar, cross-slice, and operator-valued quaternionic factorial baselines are understood.",
+    "sourceFiles": ["QUATERNIONIC_FACTORIAL.md", "SCALE_COORDINATE.md", "course/storefront-snapshot/README.md"]
   },
   {
     "id": "qsg.ext.coherence",
@@ -135,16 +149,16 @@
   {
     "id": "qsg.ext.special-functions",
     "label": "Special Functions And Operators",
-    "status": "conjectural-extension",
-    "summary": "Special-function material should be scoped as computational and exploratory unless tied to a precise proved operator statement.",
-    "sourceFiles": ["course/storefront-snapshot/README.md"]
+    "status": "prototype",
+    "summary": "Quaternionic special-function work should begin with intrinsic slice baselines and then state the functional calculus needed for noncommuting matrices or operators.",
+    "sourceFiles": ["QUATERNIONIC_FACTORIAL.md", "course/storefront-snapshot/README.md"]
   },
   {
     "id": "qsg.ext.computational",
     "label": "Computational Quaternionic Geometry",
     "status": "application-lens",
     "summary": "Algorithms, simulations, and visualizations are implementation lenses derived from the root coordinate and operator framework.",
-    "sourceFiles": ["course/storefront-snapshot/README.md"]
+    "sourceFiles": ["experiments/quaternionic_factorial_slices.py", "course/storefront-snapshot/README.md"]
   },
   {
     "id": "qsg.ext.applications",
