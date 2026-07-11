@@ -54,6 +54,10 @@ $$
 
 where $I$ is a chosen imaginary quaternionic unit with $I^2 = -1$.
 
+## Intrinsic Slice Function
+
+A quaternionic function whose restriction to each complex slice $\mathbb C_I$ is compatible with complex conjugation and whose values remain in the slice containing the input. The scalar quaternionic factorial is treated in this intrinsic sense.
+
 ## Rotor Coordinate
 
 A unit-quaternion expression
@@ -63,6 +67,66 @@ q = \cos(\phi) + \hat n\sin(\phi),
 $$
 
 where $\hat n$ is a unit imaginary quaternion. This records angular position and orientation on $S^3$. The rotor axis $\hat n$ is distinct from the real scale coordinate $s$.
+
+## Quaternionic Factorial
+
+For $\operatorname{Re}(q)>-1$, the scalar function
+
+$$
+\mathfrak F(q)
+=
+\int_0^\infty e^{-x}x^q\,dx
+=
+\Gamma(q+1),
+$$
+
+interpreted within the complex slice containing $q$. For $q=a+r\hat n$, it has the form $A(a,r)+\hat n B(a,r)$.
+
+## Quaternionic Factorial Recurrence
+
+With the convention $\mathfrak F(q)=\Gamma(q+1)$,
+
+$$
+\mathfrak F(q+1)
+=
+(q+1)\mathfrak F(q),
+$$
+
+or equivalently $\mathfrak F(q)=q\mathfrak F(q-1)$.
+
+## Axis Covariance
+
+The property
+
+$$
+\mathfrak F(a+r\hat n)
+=
+A(a,r)+\hat n B(a,r),
+$$
+
+where changing the unit imaginary axis $\hat n$ rotates the imaginary output without changing the scalar coefficient, imaginary coefficient, or norm.
+
+## Cross-Slice Commutator
+
+For factorial values $F_{\hat n}=A+B\hat n$ and $F_{\hat m}=A+B\hat m$ associated with different imaginary axes,
+
+$$
+[F_{\hat n},F_{\hat m}]
+=
+2B^2(\hat n\times\hat m).
+$$
+
+This records ordered orientation information that is absent from the norms of the two values.
+
+## Operator-Valued Factorial
+
+A proposed functional-calculus object
+
+$$
+\mathfrak F(T)=\Gamma(T+1),
+$$
+
+for a suitable matrix or quaternionic linear operator $T$. It requires a stated operator domain, spectrum, and functional calculus before it is mathematically defined.
 
 ## Spinor
 
@@ -105,6 +169,10 @@ A region, profile, or potential along the scale coordinate $s$ where spectral mo
 ## Scale Mode
 
 A localized or eigenmode profile $\chi_n(s)$ along the scale coordinate. It is distinct from an $S^3$ harmonic $Y_{\ell,\alpha}(q)$, although a full QSG state may couple both.
+
+## AGQF
+
+The Anchor-Generating Quaternionic Factorial, a downstream conjectural extension that adds an anchoring factor or well-generating rule to the scalar quaternionic factorial. It is not part of the primitive factorial definition and is not required by the QSG core.
 
 ## Coherence
 
