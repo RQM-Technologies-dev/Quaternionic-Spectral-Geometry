@@ -5,10 +5,20 @@
   {"symbol": "S^3", "latex": "S^3", "meaning": "Unit-quaternion 3-sphere", "rootRef": "qsg.core.s3"},
   {"symbol": "SU(2)", "latex": "SU(2)", "meaning": "Special unitary group identified with unit quaternions", "rootRef": "qsg.core.su2"},
   {"symbol": "M", "latex": "M = S^3 \\times \\mathbb{R}", "meaning": "QSG model manifold", "rootRef": "qsg.core.manifold"},
-  {"symbol": "q", "latex": "q = \\cos(\\phi) + u\\sin(\\phi)", "meaning": "Unit-quaternion rotor coordinate", "rootRef": "qsg.core.rotation-form"},
+  {"symbol": "q", "latex": "q = \\cos(\\phi) + \\hat n\\sin(\\phi)", "meaning": "Unit-quaternion rotor coordinate", "rootRef": "qsg.core.rotation-form"},
+  {"symbol": "n-hat", "latex": "\\hat n", "meaning": "Unit imaginary quaternion specifying the rotor axis on S^3", "rootRef": "qsg.core.rotation-form"},
+  {"symbol": "rho", "latex": "\\rho = \\lVert Q\\rVert", "meaning": "Positive quaternionic magnitude or physical scale", "rootRef": "qsg.core.anchor-coordinate"},
+  {"symbol": "rho_*", "latex": "\\rho_*", "meaning": "Chosen positive reference scale defining the origin s = 0", "rootRef": "qsg.core.anchor-coordinate"},
+  {"symbol": "s", "latex": "s = \\log(\\rho/\\rho_*)", "meaning": "Dimensionless logarithmic scale coordinate", "rootRef": "qsg.core.anchor-coordinate"},
+  {"symbol": "F(q)", "latex": "\\mathfrak F(q)=\\int_0^\\infty e^{-x}x^q\\,dx=\\Gamma(q+1)", "meaning": "Scalar quaternionic factorial in the slice containing q", "rootRef": "qsg.core.quaternionic-factorial"},
+  {"symbol": "A(a,r), B(a,r)", "latex": "\\mathfrak F(a+r\\hat n)=A(a,r)+\\hat n B(a,r)", "meaning": "Axis-covariant scalar and imaginary coefficients of the quaternionic factorial", "rootRef": "qsg.core.quaternionic-factorial"},
+  {"symbol": "[F_n,F_m]", "latex": "[F_{\\hat n},F_{\\hat m}]=2B^2(\\hat n\\times\\hat m)", "meaning": "Cross-slice factorial commutator", "rootRef": "qsg.prototype.factorial-composition"},
+  {"symbol": "F(T)", "latex": "\\mathfrak F(T)=\\Gamma(T+1)", "meaning": "Candidate operator-valued factorial requiring a stated functional calculus", "rootRef": "qsg.prototype.factorial-composition"},
   {"symbol": "A", "latex": "\\mathcal{A}", "meaning": "Observable algebra", "rootRef": "qsg.core.observable-algebra"},
   {"symbol": "H", "latex": "\\mathcal{H}", "meaning": "Hilbert space or finite state-space analogue", "rootRef": "qsg.core.hilbert-space"},
   {"symbol": "D", "latex": "D", "meaning": "Spectral or Dirac-type operator", "rootRef": "qsg.core.spectral-operator"},
   {"symbol": "[D, pi(a)]", "latex": "[D,\\pi(a)]", "meaning": "Bounded-commutator target or finite commutator analogue", "rootRef": "qsg.core.commutator"},
-  {"symbol": "V(s)", "latex": "V(s)", "meaning": "Potential or spectral-well profile in the anchor coordinate", "rootRef": "qsg.core.spectral-well"}
+  {"symbol": "V(s)", "latex": "V(s)", "meaning": "Optional potential or scale-localized spectral-well profile", "rootRef": "qsg.core.spectral-well"},
+  {"symbol": "chi_n(s)", "latex": "\\chi_n(s)", "meaning": "Localized scale mode along the real coordinate", "rootRef": "qsg.core.spectral-well"},
+  {"symbol": "rho_n", "latex": "\\rho_n = \\rho_*e^{s_n}", "meaning": "Physical scale selected by a scale-localized mode centered at s_n", "rootRef": "qsg.core.spectral-well"}
 ]

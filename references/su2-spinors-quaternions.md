@@ -19,10 +19,12 @@ $$
 Unit quaternions encode rotations and orientations. A unit quaternion can be written in rotor form as
 
 $$
-q = \cos(\phi) + u\sin(\phi),
+q = \cos(\phi) + \hat n\sin(\phi),
 $$
 
-where $u$ is a unit imaginary quaternion.
+where $\hat n$ is a unit imaginary quaternion.
+
+The notation $\hat n$ is used for the rotor axis so it remains distinct from the real logarithmic scale coordinate $s$ in $M=S^3\times\mathbb R$.
 
 ## Pauli-Matrix Form
 
@@ -41,7 +43,7 @@ Under this representation, unit quaternions map to $SU(2)$ matrices.
 
 ## Spinors
 
-Spinors provide a natural complex-linear setting for $SU(2)$ actions. Because QSG starts with $M = S^3 \times \mathbb R$, spinor-valued functions on the hypersphere, optionally indexed by the real coordinate $s$, are a practical first state-space target.
+Spinors provide a natural complex-linear setting for $SU(2)$ actions. Because QSG starts with $M = S^3 \times \mathbb R$, spinor-valued functions on the hypersphere, optionally dependent on the logarithmic scale coordinate $s$, are a practical first state-space target.
 
 ## Practical Bridge
 
