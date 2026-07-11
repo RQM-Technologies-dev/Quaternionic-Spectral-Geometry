@@ -3,14 +3,16 @@
   {"term": "Unit quaternion", "definition": "A quaternion of norm 1; unit quaternions form S^3.", "rootRef": "qsg.core.s3"},
   {"term": "S^3", "definition": "The unit-quaternion 3-sphere used as the compact QSG prototype.", "rootRef": "qsg.core.s3"},
   {"term": "SU(2)", "definition": "The compact matrix group isomorphic to unit quaternions and used for complex-linear representation.", "rootRef": "qsg.core.su2"},
-  {"term": "M = S^3 x R", "definition": "The QSG model manifold with quaternionic orientation and real resonance coordinate.", "rootRef": "qsg.core.manifold"},
-  {"term": "Rotor coordinate", "definition": "The unit-quaternion form q = cos(phi) + u sin(phi).", "rootRef": "qsg.core.rotation-form"},
+  {"term": "M = S^3 x R", "definition": "The QSG model manifold with normalized quaternionic orientation and a real logarithmic scale coordinate.", "rootRef": "qsg.core.manifold"},
+  {"term": "Scale coordinate", "definition": "The real coordinate s = log(rho/rho_*) that converts multiplicative dilation into additive translation.", "rootRef": "qsg.core.anchor-coordinate"},
+  {"term": "Rotor coordinate", "definition": "The unit-quaternion form q = cos(phi) + n-hat sin(phi), where n-hat is the imaginary rotor axis and is distinct from s.", "rootRef": "qsg.core.rotation-form"},
   {"term": "Observable algebra", "definition": "The algebra A of functions or observables represented on a state space.", "rootRef": "qsg.core.observable-algebra"},
   {"term": "Hilbert space", "definition": "The complex spinor, matrix-valued, finite, or truncated state space H used in the formal model.", "rootRef": "qsg.core.hilbert-space"},
-  {"term": "Spectral operator", "definition": "An operator D whose spectrum and commutators encode the chosen geometry.", "rootRef": "qsg.core.spectral-operator"},
+  {"term": "Spectral operator", "definition": "An operator D whose spectrum and commutators encode the chosen hypersphere and scale geometry.", "rootRef": "qsg.core.spectral-operator"},
   {"term": "Commutator", "definition": "The expression [D, pi(a)] measuring variation of an observable under D.", "rootRef": "qsg.core.commutator"},
   {"term": "Spectral triple", "definition": "A candidate object (A, H, D) with spectral-triple checks such as bounded commutators and compact resolvent or a finite analogue.", "rootRef": "qsg.core.spectral-triple-anchor"},
-  {"term": "Spectral well", "definition": "A profile, potential, region, or finite ladder along the anchor coordinate that selects or localizes modes.", "rootRef": "qsg.core.spectral-well"},
-  {"term": "AGQF", "definition": "Anchor-Generating Quaternionic Factorial; a claim-scoped extension lens for resonance wells.", "rootRef": "qsg.ext.agqf"},
-  {"term": "Coherence", "definition": "Persistence of phase, orientation, resonance level, or spectral relation under a stated action.", "rootRef": "qsg.ext.coherence"}
+  {"term": "Spectral well", "definition": "A profile, potential, region, or finite ladder along the scale coordinate that selects or localizes modes into preferred scale bands.", "rootRef": "qsg.core.spectral-well"},
+  {"term": "Scale mode", "definition": "A localized eigenmode chi_n(s) along the scale coordinate, distinct from an S^3 harmonic.", "rootRef": "qsg.core.spectral-well"},
+  {"term": "AGQF", "definition": "Anchor-Generating Quaternionic Factorial; a claim-scoped extension lens for scale-localized resonance wells.", "rootRef": "qsg.ext.agqf"},
+  {"term": "Coherence", "definition": "Persistence of phase, orientation, scale localization, resonance level, or spectral relation under a stated action.", "rootRef": "qsg.ext.coherence"}
 ]
