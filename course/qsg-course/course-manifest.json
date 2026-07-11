@@ -1,6 +1,6 @@
 {
   "courseTitle": "Quaternionic Spectral Geometry",
-  "courseSubtitle": "A coordinate and operator framework for quaternionic hypersphere geometry",
+  "courseSubtitle": "A coordinate and operator framework for quaternionic hypersphere and scale geometry",
   "courseHubPath": "/learn/quaternionic-spectral-geometry",
   "canonicalRepo": "https://github.com/RQM-Technologies-dev/quaternionic-spectral-geometry",
   "chapters": [
@@ -39,7 +39,7 @@
       "id": "chapter-2",
       "number": 2,
       "title": "The Quaternionic Rotation Form",
-      "subtitle": "q = cos(phi) + u sin(phi) and the 3-sphere",
+      "subtitle": "q = cos(phi) + n-hat sin(phi) and the 3-sphere",
       "path": "/chapter-2-quaternionic-rotation",
       "difficulty": "Beginner",
       "category": "Foundations",
@@ -47,18 +47,19 @@
       "claimStatus": "standard-background",
       "rootRefs": ["qsg.core.rotation-form", "qsg.core.su2", "qsg.core.s3"],
       "objectives": [
-        "Derive the rotation form q = cos(phi) + u sin(phi).",
+        "Derive the rotation form q = cos(phi) + n-hat sin(phi).",
+        "Distinguish the rotor axis n-hat from the real scale coordinate s.",
         "Connect unit quaternions to SU(2) and SO(3).",
         "Explain the double-cover and 4pi rotation identity.",
         "Read geodesics on S^3 as great-circle rotor motion."
       ],
-      "formulas": ["q = cos(phi) + u sin(phi)", "S^3 ~= SU(2)", "SU(2) -> SO(3)"],
-      "checkpointPrompts": ["What does u carry in q = cos(phi) + u sin(phi)?", "Why does SU(2) appear naturally?"],
-      "checkpointAnswers": ["u carries the oriented imaginary axis of the rotor.", "Unit quaternions and SU(2) describe the same compact group structure through complex matrices."],
-      "finalTakeaway": "The rotation form is the first compact handle for angle and direction in one object.",
+      "formulas": ["q = cos(phi) + n-hat sin(phi)", "S^3 ~= SU(2)", "SU(2) -> SO(3)"],
+      "checkpointPrompts": ["What does n-hat carry in q = cos(phi) + n-hat sin(phi)?", "How is n-hat different from s?", "Why does SU(2) appear naturally?"],
+      "checkpointAnswers": ["n-hat carries the oriented imaginary axis of the rotor.", "n-hat belongs to the S^3 rotor coordinate, while s is a real logarithmic scale coordinate.", "Unit quaternions and SU(2) describe the same compact group structure through complex matrices."],
+      "finalTakeaway": "The rotation form gives angle and oriented axis on S^3 without confusing either with the independent scale coordinate.",
       "claimScopeNote": "Standard quaternionic and Lie-group background used as QSG coordinate vocabulary.",
       "sections": [
-        {"id": "section-2-1", "number": "2.1", "title": "Deriving q(t) = cos(phi) + u sin(phi)", "rootRefs": ["qsg.core.rotation-form"], "claimStatus": "standard-background"},
+        {"id": "section-2-1", "number": "2.1", "title": "Deriving q(t) = cos(phi) + n-hat sin(phi)", "rootRefs": ["qsg.core.rotation-form"], "claimStatus": "standard-background"},
         {"id": "section-2-2", "number": "2.2", "title": "Connection to SU(2) and SO(3)", "rootRefs": ["qsg.core.su2"], "claimStatus": "standard-background"},
         {"id": "section-2-3", "number": "2.3", "title": "4pi rotation identity and topology of spin", "rootRefs": ["qsg.core.su2"], "claimStatus": "standard-background"},
         {"id": "section-2-4", "number": "2.4", "title": "Geodesics, tangent spaces, and Hopf fibration", "rootRefs": ["qsg.core.s3", "qsg.core.metric-geometry"], "claimStatus": "standard-background"},
@@ -99,7 +100,7 @@
       "id": "chapter-4",
       "number": 4,
       "title": "Spectral Calculus",
-      "subtitle": "Operators, eigenvalues, and resonance",
+      "subtitle": "Operators, eigenvalues, scale, and resonance",
       "path": "/chapter-4-spectral-calculus",
       "difficulty": "Intermediate",
       "category": "Calculus & Spectral Theory",
@@ -110,25 +111,26 @@
         "State operators, spectra, and functional calculus as QSG tools.",
         "Use Rayleigh quotients and variational language cautiously.",
         "Connect spectral modes to geometry without overclaiming physical interpretation.",
+        "Separate the continuous scale coordinate from discrete localized resonance modes.",
         "Prepare the algebra, representation, and commutator checks."
       ],
       "formulas": ["[D, pi(a)] = D pi(a) - pi(a) D", "D_M = D_{S^3} + D_s + V(s)"],
       "checkpointPrompts": ["What must be specified before an operator is meaningful?", "What does a commutator test?"],
-      "checkpointAnswers": ["The domain or finite substitute, state space, algebra action, and intended spectral behavior.", "It tests how the operator detects variation in an observable."],
-      "finalTakeaway": "Spectral calculus is where QSG becomes an operator framework rather than only coordinate language.",
+      "checkpointAnswers": ["The domain or finite substitute, state space, algebra action, metric, and intended spectral behavior.", "It tests how the operator detects variation in an observable."],
+      "finalTakeaway": "Spectral calculus is where scale geometry acquires operators and possible localized resonance modes.",
       "claimScopeNote": "Definitions and candidate operators, not completed spectral-triple proofs.",
       "sections": [
         {"id": "section-4-1", "number": "4.1", "title": "Spectra of operators on SU(2) x R", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.anchored-model"], "claimStatus": "prototype"},
         {"id": "section-4-2", "number": "4.2", "title": "Functional calculus and heat operators", "rootRefs": ["qsg.core.spectral-operator"], "claimStatus": "definition"},
         {"id": "section-4-3", "number": "4.3", "title": "Rayleigh quotient and variational principles", "rootRefs": ["qsg.core.spectral-operator"], "claimStatus": "standard-background"},
-        {"id": "section-4-4", "number": "4.4", "title": "Resonance selection and geometric modes", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.spectral-well"], "claimStatus": "prototype"}
+        {"id": "section-4-4", "number": "4.4", "title": "Scale localization and resonance selection", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.spectral-well"], "claimStatus": "prototype"}
       ]
     },
     {
       "id": "chapter-5",
       "number": 5,
       "title": "Spectral Theory on S^3 x R",
-      "subtitle": "Harmonic analysis and eigenfunctions",
+      "subtitle": "Hypersphere harmonics and scale modes",
       "path": "/chapter-5-distributions-pde",
       "difficulty": "Advanced",
       "category": "Calculus & Spectral Theory",
@@ -136,29 +138,30 @@
       "claimStatus": "prototype",
       "rootRefs": ["qsg.core.manifold", "qsg.core.anchored-model", "qsg.core.compact-prototype", "qsg.core.spectral-triple-anchor"],
       "objectives": [
-        "Separate compact S^3 prototypes from anchored S^3 x R models.",
+        "Separate compact S^3 prototypes from scale-anchored S^3 x R models.",
         "Use harmonic analysis on SU(2) as a spectral vocabulary.",
+        "Distinguish S^3 harmonic labels from scale-mode labels.",
         "Track when compact-resolvent claims are available and when they are not.",
         "State the theorem target for a spectral-triple-compatible model."
       ],
-      "formulas": ["M = S^3 x R", "(A, H, D)", "D_M = D_{S^3} + Gamma partial_s + V(s)"],
-      "checkpointPrompts": ["Why is compact S^3 easier than S^3 x R?", "What must be checked for a spectral triple?"],
-      "checkpointAnswers": ["S^3 is compact, while S^3 x R is noncompact unless the s-direction is controlled.", "One must specify A, H, D, representation, self-adjointness/domain, compact resolvent or finite analogue, and bounded commutators."],
-      "finalTakeaway": "The compact prototype is the honest first target; the anchored model is a later controlled extension.",
+      "formulas": ["M = S^3 x R", "s = log(rho/rho_*)", "Psi(q,s) = sum psi_{ell,alpha}(s) Y_{ell,alpha}(q)", "D_M = D_{S^3} + Gamma partial_s + V(s)"],
+      "checkpointPrompts": ["Why is compact S^3 easier than S^3 x R?", "How do S^3 harmonics differ from scale modes?", "What must be checked for a spectral triple?"],
+      "checkpointAnswers": ["S^3 is compact, while S^3 x R is noncompact unless the s-direction is controlled.", "S^3 harmonics describe orientation-space structure, while scale modes describe localization along s.", "One must specify A, H, D, representation, self-adjointness/domain, compact resolvent or finite analogue, and bounded commutators."],
+      "finalTakeaway": "The compact prototype is the honest first target; the scale-anchored model is a later controlled extension.",
       "claimScopeNote": "Prototype spectral geometry with explicit unresolved analytic checks.",
       "sections": [
         {"id": "section-5-1", "number": "5.1", "title": "Separation of variables on S^3", "rootRefs": ["qsg.core.s3", "qsg.core.compact-prototype"], "claimStatus": "standard-background"},
         {"id": "section-5-2", "number": "5.2", "title": "Wigner D-matrices and quaternionic modes", "rootRefs": ["qsg.core.su2", "qsg.core.compact-prototype"], "claimStatus": "standard-background"},
         {"id": "section-5-3", "number": "5.3", "title": "Fourier and Laplace transforms on SU(2) x R", "rootRefs": ["qsg.core.su2", "qsg.core.anchored-model"], "claimStatus": "prototype"},
         {"id": "section-5-4", "number": "5.4", "title": "Spectral density and orthogonality relations", "rootRefs": ["qsg.core.spectral-operator"], "claimStatus": "standard-background"},
-        {"id": "section-5-5", "number": "5.5", "title": "Energy, frequency, and orientation in spectral space", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.manifold"], "claimStatus": "prototype"}
+        {"id": "section-5-5", "number": "5.5", "title": "Scale, energy, frequency, and orientation in spectral space", "rootRefs": ["qsg.core.spectral-operator", "qsg.core.manifold", "qsg.core.anchor-coordinate"], "claimStatus": "prototype"}
       ]
     },
     {
       "id": "chapter-6",
       "number": 6,
       "title": "The Anchor-Generating Quaternionic Factorial (AGQF)",
-      "subtitle": "Resonance wells and quantization",
+      "subtitle": "Scale-localized resonance wells and conjectural quantization",
       "path": "/chapter-6-agqf-hub",
       "difficulty": "Advanced",
       "category": "Advanced Concepts",
@@ -166,29 +169,30 @@
       "claimStatus": "conjectural-extension",
       "rootRefs": ["qsg.core.anchor-coordinate", "qsg.core.spectral-well", "qsg.ext.agqf"],
       "objectives": [
-        "Treat AGQF as an extension after the spectral stage is in view.",
-        "Connect anchor forms to resonance-well vocabulary.",
+        "Treat AGQF as an extension after the scale and spectral stages are in view.",
+        "Interpret anchor forms as candidate scale-localized resonance wells.",
+        "Map a well center s_n to a selected scale rho_n = rho_* exp(s_n).",
         "Separate definitions and examples from conjectural quantization language.",
         "Avoid presenting AGQF as part of the minimum spectral-triple core."
       ],
-      "formulas": ["U_anchor(u) = -beta log(sin^m(pi u^2/2) + delta)"],
-      "checkpointPrompts": ["What is AGQF's status in the course?", "Why does the anchor coordinate matter here?"],
-      "checkpointAnswers": ["It is a conjectural extension and teaching lens, not a proved core axiom.", "It supplies the real direction where well-like profiles can be modeled."],
-      "finalTakeaway": "AGQF belongs downstream of the root spectral model and must remain claim-scoped.",
-      "claimScopeNote": "Conjectural extension; not a completed quantization theorem.",
+      "formulas": ["s = log(rho/rho_*)", "U_anchor(s) = -beta log(sin^m(pi s^2/2) + delta)", "rho_n = rho_* exp(s_n)"],
+      "checkpointPrompts": ["What is AGQF's status in the course?", "Why does the scale coordinate matter here?", "What does s -> -s imply for an s^2 well profile?"],
+      "checkpointAnswers": ["It is a conjectural extension and teaching lens, not a proved core axiom.", "It supplies the continuous dilation direction where well-like profiles may localize preferred scales.", "It pairs reciprocal scales around rho_*, a symmetry that must be stated as intentional or treated as a profile artifact."],
+      "finalTakeaway": "AGQF is a conjectural mechanism for localizing modes in scale space, downstream of the root coordinate and operator model.",
+      "claimScopeNote": "Conjectural extension; not a completed quantization theorem or established physical dimension.",
       "sections": [
         {"id": "section-6-1", "number": "6.1", "title": "Definition of the quaternionic factorial", "rootRefs": ["qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-2", "number": "6.2", "title": "Anchored AGQF forms", "rootRefs": ["qsg.core.anchor-coordinate", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-3", "number": "6.3", "title": "Sine-prefactor lattice and zero boundaries", "rootRefs": ["qsg.ext.agqf", "qsg.core.spectral-well"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-4", "number": "6.4", "title": "Effective potential and resonance wells", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-5", "number": "6.5", "title": "Quantization as confinement within resonance wells", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"}
+        {"id": "section-6-2", "number": "6.2", "title": "Anchored AGQF forms on the scale coordinate", "rootRefs": ["qsg.core.anchor-coordinate", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
+        {"id": "section-6-3", "number": "6.3", "title": "Sine-prefactor lattice, reciprocal scales, and zero boundaries", "rootRefs": ["qsg.ext.agqf", "qsg.core.spectral-well"], "claimStatus": "conjectural-extension"},
+        {"id": "section-6-4", "number": "6.4", "title": "Effective potential and scale-localized resonance wells", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
+        {"id": "section-6-5", "number": "6.5", "title": "Quantization as conjectural confinement in scale space", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"}
       ]
     },
     {
       "id": "chapter-7",
       "number": 7,
       "title": "Quaternionic Spectral Coherence",
-      "subtitle": "Resonance, alignment, and field stability",
+      "subtitle": "Phase, orientation, scale localization, and field stability",
       "path": "/chapter-7-spectral-coherence-hub",
       "difficulty": "Advanced",
       "category": "Advanced Concepts",
@@ -197,20 +201,20 @@
       "rootRefs": ["qsg.ext.coherence", "qsg.core.spectral-operator", "qsg.core.spectral-well"],
       "objectives": [
         "Define coherence example by example.",
-        "Relate alignment to phase, orientation, and resonance structure.",
+        "Relate alignment to phase, orientation, scale localization, and resonance structure.",
         "Use coherence metrics as scoped diagnostic tools.",
         "Keep field-stability language tied to explicit models."
       ],
       "formulas": ["coherence = persistence under a stated action or operator"],
       "checkpointPrompts": ["What makes a coherence claim mathematically inspectable?", "What must be avoided?"],
       "checkpointAnswers": ["It states what is coherent, under which action, and how it is measured or bounded.", "Avoid implying universal field stability without a specified model."],
-      "finalTakeaway": "Coherence is useful only when the conserved or persistent structure is precisely named.",
+      "finalTakeaway": "Coherence is useful only when the conserved or persistent phase, orientation, or scale structure is precisely named.",
       "claimScopeNote": "Conjectural extension and diagnostic language.",
       "sections": [
         {"id": "section-7-1", "number": "7.1", "title": "Coherence as alignment of quaternionic phase vectors", "rootRefs": ["qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
         {"id": "section-7-2", "number": "7.2", "title": "Interference and resonance on S^3", "rootRefs": ["qsg.core.s3", "qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
         {"id": "section-7-3", "number": "7.3", "title": "Spectral coherence functions and correlation metrics", "rootRefs": ["qsg.core.spectral-operator", "qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
-        {"id": "section-7-4", "number": "7.4", "title": "Temporal equilibration of eigenvectors", "rootRefs": ["qsg.core.spectral-operator", "qsg.ext.coherence"], "claimStatus": "conjectural-extension"},
+        {"id": "section-7-4", "number": "7.4", "title": "Temporal equilibration of scale-localized eigenvectors", "rootRefs": ["qsg.core.spectral-operator", "qsg.ext.coherence", "qsg.core.spectral-well"], "claimStatus": "conjectural-extension"},
         {"id": "section-7-5", "number": "7.5", "title": "Visualizing coherence fields and transitions", "rootRefs": ["qsg.ext.coherence", "qsg.ext.computational"], "claimStatus": "application-lens"}
       ]
     },
@@ -256,19 +260,20 @@
       "rootRefs": ["qsg.ext.computational", "qsg.core.quaternion-matrix", "qsg.core.spectral-operator"],
       "objectives": [
         "Represent quaternions and SU(2) rotations numerically.",
+        "Represent and visualize the logarithmic scale coordinate.",
         "Use finite truncations and visualizations as examples, not proofs.",
         "Track which structures survive discretization.",
         "Connect computational models back to canonical roots."
       ],
-      "formulas": ["H -> M_2(C)", "finite truncation approximates the chosen infinite model only after stated choices"],
+      "formulas": ["H -> M_2(C)", "s = log(rho/rho_*)", "finite truncation approximates the chosen infinite model only after stated choices"],
       "checkpointPrompts": ["Why are finite models useful?", "What must a visualization trace back to?"],
-      "checkpointAnswers": ["They make spectra, commutators, and examples computable while replacing some analytic requirements.", "A canonical root such as S^3, SU(2), matrix bridge, or spectral operator."],
+      "checkpointAnswers": ["They make spectra, commutators, scale profiles, and examples computable while replacing some analytic requirements.", "A canonical root such as S^3, SU(2), the scale coordinate, matrix bridge, or spectral operator."],
       "finalTakeaway": "Computation is a branch that tests and visualizes the roots; it is not the canonical root itself.",
       "claimScopeNote": "Application and implementation lens.",
       "sections": [
         {"id": "section-9-1", "number": "9.1", "title": "Numerical representation of quaternions and SU(2)", "rootRefs": ["qsg.core.quaternion-matrix", "qsg.core.su2"], "claimStatus": "application-lens"},
         {"id": "section-9-2", "number": "9.2", "title": "Quaternionic FFTs and spectral filters", "rootRefs": ["qsg.ext.computational", "qsg.core.spectral-operator"], "claimStatus": "application-lens"},
-        {"id": "section-9-3", "number": "9.3", "title": "Visualization of wells, isosurfaces, and coherence fields", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.coherence", "qsg.ext.computational"], "claimStatus": "application-lens"},
+        {"id": "section-9-3", "number": "9.3", "title": "Visualization of scale wells, isosurfaces, and coherence fields", "rootRefs": ["qsg.core.spectral-well", "qsg.core.anchor-coordinate", "qsg.ext.coherence", "qsg.ext.computational"], "claimStatus": "application-lens"},
         {"id": "section-9-4", "number": "9.4", "title": "Python and Mathematica toolkits", "rootRefs": ["qsg.ext.computational"], "claimStatus": "application-lens"},
         {"id": "section-9-5", "number": "9.5", "title": "Data structures for quaternionic tensors and signals", "rootRefs": ["qsg.ext.computational", "qsg.core.quaternion"], "claimStatus": "application-lens"}
       ]
@@ -292,22 +297,22 @@
       ],
       "formulas": ["application lens = root model + stated interpretation + scoped evidence"],
       "checkpointPrompts": ["What is the safest first mathematical ask?", "How should frontier material be framed?"],
-      "checkpointAnswers": ["Whether the compact S^3 prototype can be made into an honest spectral triple.", "As open research direction, not settled theory."],
-      "finalTakeaway": "QSG applications are branches; the trunk is the canonical coordinate and operator framework.",
+      "checkpointAnswers": ["Whether the compact S^3 prototype can be made into an honest spectral triple and whether the scale extension adds nonredundant structure.", "As open research direction, not settled theory."],
+      "finalTakeaway": "QSG applications are branches; the trunk is the canonical orientation, scale, and operator framework.",
       "claimScopeNote": "Application lens and frontier questions.",
       "sections": [
         {"id": "section-10-1", "number": "10.1", "title": "Quaternionic signal processing and communication systems", "rootRefs": ["qsg.ext.applications", "qsg.core.quaternion"], "claimStatus": "application-lens"},
         {"id": "section-10-2", "number": "10.2", "title": "Quaternionic optics and polarization analysis", "rootRefs": ["qsg.ext.applications", "qsg.core.su2"], "claimStatus": "application-lens"},
         {"id": "section-10-3", "number": "10.3", "title": "Orientation tracking in robotics and navigation", "rootRefs": ["qsg.ext.applications", "qsg.core.rotation-form"], "claimStatus": "application-lens"},
-        {"id": "section-10-4", "number": "10.4", "title": "Quantum spectral interpretation of atomic systems", "rootRefs": ["qsg.ext.applications", "qsg.core.spectral-operator"], "claimStatus": "application-lens"},
-        {"id": "section-10-5", "number": "10.5", "title": "Open problems: spectral packing, prime structure, and zeta fields", "rootRefs": ["qsg.ext.zeta-frontier", "qsg.core.spectral-triple-anchor"], "claimStatus": "frontier-question"}
+        {"id": "section-10-4", "number": "10.4", "title": "Scale-aware quantum spectral interpretation of atomic systems", "rootRefs": ["qsg.ext.applications", "qsg.core.spectral-operator", "qsg.core.anchor-coordinate"], "claimStatus": "application-lens"},
+        {"id": "section-10-5", "number": "10.5", "title": "Open problems: scale spectra, spectral packing, prime structure, and zeta fields", "rootRefs": ["qsg.ext.zeta-frontier", "qsg.core.spectral-triple-anchor", "qsg.core.anchor-coordinate"], "claimStatus": "frontier-question"}
       ]
     }
   ],
   "appendices": [
     "A: Quaternion algebra identities and proofs",
-    "B: Volume and curvature formulas on S^3",
+    "B: Volume, curvature, and conformal-cylinder formulas on S^3 x R",
     "C: Quaternionic Fourier Transform derivations",
-    "D: Reference tables of spectral eigenmodes and constants"
+    "D: Reference tables of hypersphere harmonics, scale modes, and constants"
   ]
 }
