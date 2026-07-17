@@ -15,10 +15,10 @@
   },
   {
     "id": "qsg.core.manifold",
-    "label": "QSG Model Manifold",
-    "status": "definition",
-    "summary": "The basic QSG stage is M = S^3 x R, with unit-quaternion orientation and a real resonance or anchor coordinate.",
-    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+    "label": "Historical QSG Model Manifold",
+    "status": "retired-physical-interpretation",
+    "summary": "M = S^3 x R remains a mathematical product-manifold example; its former role as physical spacetime or a natural resonance axis is closed under current evidence.",
+    "sourceFiles": ["CANON.md", "archive/pre-canon-v2/CANON.md"]
   },
   {
     "id": "qsg.core.s3",
@@ -99,31 +99,31 @@
   },
   {
     "id": "qsg.core.anchor-coordinate",
-    "label": "Anchor Coordinate",
-    "status": "definition",
-    "summary": "The real coordinate s in S^3 x R tracks resonance level, anchor height, spectral selection, or deformation in each example.",
-    "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
+    "label": "Historical Anchor Coordinate",
+    "status": "retired-physical-interpretation",
+    "summary": "The real coordinate s may parameterize a toy model, but it is not an established physical axis or natural quantization coordinate.",
+    "sourceFiles": ["CANON.md", "archive/pre-canon-v2/CANON.md"]
   },
   {
     "id": "qsg.core.spectral-well",
-    "label": "Spectral Well",
-    "status": "definition",
-    "summary": "A spectral well is a function, region, potential, or finite ladder along s that selects or localizes spectral modes.",
+    "label": "Chosen Toy Potential",
+    "status": "example",
+    "summary": "A selected potential can localize modes in a stated toy eigenproblem; it is not evidence of a natural physical well or confinement law.",
     "sourceFiles": ["CANON.md", "examples/anchored-spectral-geometry.md"]
   },
   {
     "id": "qsg.core.anchored-model",
-    "label": "Anchored S^3 x R Model",
-    "status": "prototype",
-    "summary": "The noncompact anchored model requires compactification, confinement, finite truncation, or a noncompact spectral-triple framework before compact-resolvent claims.",
-    "sourceFiles": ["SPECTRAL_TRIPLE_ANCHOR.md", "examples/anchored-spectral-geometry.md"]
+    "label": "Historical Anchored S^3 x R Model",
+    "status": "retired-physical-interpretation",
+    "summary": "The anchored model is retained as a historical mathematical prototype; physical dynamics and natural-confinement interpretations are closed.",
+    "sourceFiles": ["CANON.md", "archive/pre-canon-v2/CANON.md"]
   },
   {
     "id": "qsg.ext.agqf",
     "label": "Anchor-Generating Quaternionic Factorial",
-    "status": "conjectural-extension",
-    "summary": "AGQF material is an extension lens for resonance wells and quantization-like organization, not part of the minimum spectral-triple proof target.",
-    "sourceFiles": ["course/storefront-snapshot/README.md"]
+    "status": "retired",
+    "summary": "AGQF is a retired historical conjecture, preserved only for provenance and not available as active physics, course, or product canon.",
+    "sourceFiles": ["AGQF_RETIREMENT_NOTICE.md", "course/storefront-snapshot/README.md"]
   },
   {
     "id": "qsg.ext.coherence",
@@ -134,10 +134,10 @@
   },
   {
     "id": "qsg.ext.special-functions",
-    "label": "Special Functions And Operators",
-    "status": "conjectural-extension",
-    "summary": "Special-function material should be scoped as computational and exploratory unless tied to a precise proved operator statement.",
-    "sourceFiles": ["course/storefront-snapshot/README.md"]
+    "label": "Quaternionic Special Functions",
+    "status": "research-mathematics",
+    "summary": "Quaternionic factorials and related functions are research mathematics for slice structure, covariance, noncommutative products, functional calculus, and benchmarked kernel questions.",
+    "sourceFiles": ["QUATERNIONIC_SPECIAL_FUNCTIONS_RESEARCH.md"]
   },
   {
     "id": "qsg.ext.computational",

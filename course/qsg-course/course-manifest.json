@@ -157,31 +157,31 @@
     {
       "id": "chapter-6",
       "number": 6,
-      "title": "The Anchor-Generating Quaternionic Factorial (AGQF)",
-      "subtitle": "Resonance wells and quantization",
-      "path": "/chapter-6-agqf-hub",
+      "title": "Quaternionic Special Functions Research",
+      "subtitle": "Slice-wise Gamma relations and bounded open questions",
+      "path": "/research/quaternionic-special-functions",
       "difficulty": "Advanced",
       "category": "Advanced Concepts",
-      "estimatedTime": "50 min",
-      "claimStatus": "conjectural-extension",
-      "rootRefs": ["qsg.core.anchor-coordinate", "qsg.core.spectral-well", "qsg.ext.agqf"],
+      "estimatedTime": "35 min",
+      "claimStatus": "research-mathematics",
+      "rootRefs": ["qsg.ext.special-functions"],
       "objectives": [
-        "Treat AGQF as an extension after the spectral stage is in view.",
-        "Connect anchor forms to resonance-well vocabulary.",
-        "Separate definitions and examples from conjectural quantization language.",
-        "Avoid presenting AGQF as part of the minimum spectral-triple core."
+        "Define a quaternionic factorial and its domain precisely.",
+        "Audit slice-wise definitions against the shifted Gamma function.",
+        "Distinguish left, right, cross-slice, matrix, and operator-valued questions.",
+        "Keep special-function research separate from physical dynamics."
       ],
-      "formulas": ["U_anchor(u) = -beta log(sin^m(pi u^2/2) + delta)"],
-      "checkpointPrompts": ["What is AGQF's status in the course?", "Why does the anchor coordinate matter here?"],
-      "checkpointAnswers": ["It is a conjectural extension and teaching lens, not a proved core axiom.", "It supplies the real direction where well-like profiles can be modeled."],
-      "finalTakeaway": "AGQF belongs downstream of the root spectral model and must remain claim-scoped.",
-      "claimScopeNote": "Conjectural extension; not a completed quantization theorem.",
+      "formulas": ["q! = Gamma(q + 1) on a stated complex slice when the selected definition reduces to the slice Gamma function"],
+      "checkpointPrompts": ["What must be checked before calling a quaternionic factorial new?", "What does analytic richness establish physically?"],
+      "checkpointAnswers": ["Its definition must be compared with the shifted Gamma function on each slice and its multiplication ordering stated.", "Nothing by itself; a special function is not a physical evolution law."],
+      "finalTakeaway": "Quaternionic special functions are disciplined research mathematics whose novelty and engineering value require explicit baselines.",
+      "claimScopeNote": "Research mathematics; no physical-dynamics, confinement, or quantum-advantage claim.",
       "sections": [
-        {"id": "section-6-1", "number": "6.1", "title": "Definition of the quaternionic factorial", "rootRefs": ["qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-2", "number": "6.2", "title": "Anchored AGQF forms", "rootRefs": ["qsg.core.anchor-coordinate", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-3", "number": "6.3", "title": "Sine-prefactor lattice and zero boundaries", "rootRefs": ["qsg.ext.agqf", "qsg.core.spectral-well"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-4", "number": "6.4", "title": "Effective potential and resonance wells", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
-        {"id": "section-6-5", "number": "6.5", "title": "Quantization as confinement within resonance wells", "rootRefs": ["qsg.core.spectral-well", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"}
+        {"id": "section-6-1", "number": "6.1", "title": "Definitions, domains, and notation", "rootRefs": ["qsg.ext.special-functions"], "claimStatus": "research-mathematics"},
+        {"id": "section-6-2", "number": "6.2", "title": "Slice-wise Gamma relationship", "rootRefs": ["qsg.ext.special-functions"], "claimStatus": "research-mathematics"},
+        {"id": "section-6-3", "number": "6.3", "title": "Poles, covariance, and asymptotics", "rootRefs": ["qsg.ext.special-functions"], "claimStatus": "research-mathematics"},
+        {"id": "section-6-4", "number": "6.4", "title": "Left, right, and cross-slice variants", "rootRefs": ["qsg.ext.special-functions"], "claimStatus": "research-mathematics"},
+        {"id": "section-6-5", "number": "6.5", "title": "Operator and kernel benchmarks", "rootRefs": ["qsg.ext.special-functions", "qsg.ext.computational"], "claimStatus": "research-mathematics"}
       ]
     },
     {
@@ -237,7 +237,7 @@
       "finalTakeaway": "Special tools are useful branches, but the root remains the precise operator model.",
       "claimScopeNote": "Conjectural and frontier material where not backed by explicit theorem statements.",
       "sections": [
-        {"id": "section-8-1", "number": "8.1", "title": "The quaternionic factorial operator", "rootRefs": ["qsg.ext.special-functions", "qsg.ext.agqf"], "claimStatus": "conjectural-extension"},
+        {"id": "section-8-1", "number": "8.1", "title": "The quaternionic factorial as a research function", "rootRefs": ["qsg.ext.special-functions"], "claimStatus": "research-mathematics"},
         {"id": "section-8-2", "number": "8.2", "title": "Relations to pi, Gamma(1/2), and spectral multipliers", "rootRefs": ["qsg.ext.special-functions"], "claimStatus": "conjectural-extension"},
         {"id": "section-8-3", "number": "8.3", "title": "Concrete computations and examples", "rootRefs": ["qsg.ext.special-functions", "qsg.ext.computational"], "claimStatus": "example"},
         {"id": "section-8-4", "number": "8.4", "title": "Connections to zeta and Euler products", "rootRefs": ["qsg.ext.zeta-frontier"], "claimStatus": "frontier-question"}

@@ -1,66 +1,58 @@
 # Quaternionic Spectral Geometry
 
-Quaternionic Spectral Geometry (QSG) is a developing mathematical framework for studying spectral, metric, phase, orientation, coherence, and resonance structures on quaternionic hypersphere spaces, with the basic model manifold
+Quaternionic Spectral Geometry (QSG) is a mathematical and computational toolkit
+for quaternion geometry, $SU(2)$, $S^3$ harmonics, spectral operators, Fock
+hydrogen geometry, and quaternionic special-functions research.
 
-$$
-M = S^3 \times \mathbb R.
-$$
+QSG uses standard mathematics and standard-compatible representations. A unit
+quaternion and an $SU(2)$ matrix encode the same complete single-rotation
+information. Quaternion coordinates can make phase, rotation, orientation, and
+composition structure convenient to preserve, but they do not add quantum
+information beyond the complete standard representation.
 
-Here $S^3$ is the unit-quaternion hypersphere, identified with $SU(2)$, and the $\mathbb R$ coordinate records a real resonance or anchor parameter. The first formal bridge uses the standard embedding $\mathbb H \hookrightarrow M_2(\mathbb C)$ so that quaternionic geometry can be studied through complex matrices, spinors, operators, and ordinary spectral constructions before any native quaternionic Hilbert-space machinery is required.
+## Active Scope
 
-## Why This Repo Exists
+The active program includes:
 
-This repository establishes a public mathematical canon for QSG: the manifold, coordinate vocabulary, hypersphere geometry, spectral operators, coherence language, examples, and a disciplined path toward formalization.
+- Hamilton multiplication, conjugation, norm, inverse, and ordered composition;
+- unit quaternions, $SU(2)$, and the $SU(2)\rightarrow SO(3)$ double cover;
+- $S^3$ harmonics, Laplace–Beltrami, Casimir, Dirac, and spectral operators where
+  they are actually defined and implemented;
+- complex matrix and spinor realizations of quaternion coordinates;
+- Fock's standard momentum-space hydrogen hypersphere;
+- numerical and visualization tools with explicit standard baselines; and
+- bounded quaternionic special-functions research.
 
-The goal is to make a precise research program inspectable. Definitions, examples, conjectural extensions, and speculative interpretations should remain separate.
+The historical $S^3\times\mathbb R$ anchor/spectral-well program is closed as a
+physical theory under current evidence. It may still be studied as a toy
+mathematical model, but it is not established physical spacetime or a replacement
+for quantum mechanics.
 
-## Core Manifold
+## AGQF Status
 
-The starting object is
+The Anchor-Generating Quaternionic Factorial (AGQF) is a retired historical
+conjecture. It is not Fock's hydrogen hypersphere, is not required for the
+hydrogen spectrum, and has not produced an independently calibrated physical
+prediction. See [AGQF_RETIREMENT_NOTICE.md](AGQF_RETIREMENT_NOTICE.md).
 
-$$
-M = S^3 \times \mathbb R,
-$$
+Quaternionic factorials remain available as research mathematics, not physical
+dynamics. See
+[QUATERNIONIC_SPECIAL_FUNCTIONS_RESEARCH.md](QUATERNIONIC_SPECIAL_FUNCTIONS_RESEARCH.md).
 
-where
+## Canon
 
-- $S^3 = \{q \in \mathbb H : \|q\| = 1\}$ is the unit-quaternion hypersphere,
-- $S^3 \cong SU(2)$ gives the rotor and spinor-facing group structure,
-- $\mathbb R$ supplies a resonance coordinate $s$,
-- a point of $M$ is written $(q,s)$.
-
-The $S^3$ coordinate carries phase, rotation, orientation, and polarization data. The $s$ coordinate tracks resonance level, anchor height, or spectral selection parameter.
-
-## Spectral Formalization
-
-QSG is adjacent to spectral triples and related operator-theoretic formalisms because it organizes geometry through an algebra of observables, a state space, and a spectral operator. The general bridge is:
-
-- an algebra $\mathcal A$ of functions or observables on $M$,
-- a complex spinor or matrix-valued state space $\mathcal H$,
-- a spectral operator $D$ sensitive to hypersphere and $s$-direction structure,
-- commutators $[D,\pi(a)]$ encoding derivative or measurement-like variation.
-
-This is a general mathematical interface for QSG examples.
-
-For the focused spectral-triple formulation target, see [Spectral-Triple Anchor](SPECTRAL_TRIPLE_ANCHOR.md).
-
-## Status
-
-This is an early research canon, not a finished theory. The current target is a minimal model on $M = S^3 \times \mathbb R$ with explicit quaternion-as-$M_2(\mathbb C)$ coordinates, a simple algebra of observables, a candidate spectral operator, and computed commutators.
-
-## Suggested First Formalization Target
-
-A finite or truncated model of $M = S^3 \times \mathbb R$ using:
-
-- unit quaternions represented as complex $2 \times 2$ matrices,
-- a compact or discretized $s$ coordinate,
-- spinor-valued or matrix-valued states,
-- a spectral operator combining an $S^3/SU(2)$ component with an $s$-direction component.
-
-The first compact prototype should be checked before the anchored $S^3 \times \mathbb R$ model is treated as a spectral triple.
+The active repo-local boundary is [CANON.md](CANON.md). The organization-wide
+evidence authority is `rqm-experiments/docs/RQM_TECHNICAL_CANON_V2.md`, with
+evidence through EXP-009.
 
 ## Course Material
 
-The current storefront course contains more expanded teaching material than this early canon. A repo-local snapshot is maintained in [course/storefront-snapshot](course/storefront-snapshot/README.md) so the course information can be preserved here first, then normalized into durable QSG roots over time.
+The pre-Canon-v2 Storefront course is preserved in
+[course/storefront-snapshot](course/storefront-snapshot/README.md) as historical
+provenance.
 
-The normalized course trunk lives in [course/qsg-course](course/qsg-course/README.md). Storefront course pages should treat that directory as the canonical source for QSG roots, claim statuses, chapter structure, glossary terms, notation, and route-to-root derivation metadata.
+The active normalized course trunk lives in
+[course/qsg-course](course/qsg-course/README.md). Storefront course pages should
+treat that directory as the canonical source for QSG roots, claim statuses,
+chapter structure, glossary terms, notation, and route-to-root derivation
+metadata.

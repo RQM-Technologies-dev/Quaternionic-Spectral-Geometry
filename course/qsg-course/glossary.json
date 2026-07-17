@@ -3,7 +3,7 @@
   {"term": "Unit quaternion", "definition": "A quaternion of norm 1; unit quaternions form S^3.", "rootRef": "qsg.core.s3"},
   {"term": "S^3", "definition": "The unit-quaternion 3-sphere used as the compact QSG prototype.", "rootRef": "qsg.core.s3"},
   {"term": "SU(2)", "definition": "The compact matrix group isomorphic to unit quaternions and used for complex-linear representation.", "rootRef": "qsg.core.su2"},
-  {"term": "M = S^3 x R", "definition": "The QSG model manifold with quaternionic orientation and real resonance coordinate.", "rootRef": "qsg.core.manifold"},
+  {"term": "M = S^3 x R", "definition": "A historical QSG product-manifold model retained as mathematics; its physical-spacetime interpretation is retired.", "rootRef": "qsg.core.manifold"},
   {"term": "Rotor coordinate", "definition": "The unit-quaternion form q = cos(phi) + u sin(phi).", "rootRef": "qsg.core.rotation-form"},
   {"term": "Observable algebra", "definition": "The algebra A of functions or observables represented on a state space.", "rootRef": "qsg.core.observable-algebra"},
   {"term": "Hilbert space", "definition": "The complex spinor, matrix-valued, finite, or truncated state space H used in the formal model.", "rootRef": "qsg.core.hilbert-space"},
@@ -11,6 +11,7 @@
   {"term": "Commutator", "definition": "The expression [D, pi(a)] measuring variation of an observable under D.", "rootRef": "qsg.core.commutator"},
   {"term": "Spectral triple", "definition": "A candidate object (A, H, D) with spectral-triple checks such as bounded commutators and compact resolvent or a finite analogue.", "rootRef": "qsg.core.spectral-triple-anchor"},
   {"term": "Spectral well", "definition": "A profile, potential, region, or finite ladder along the anchor coordinate that selects or localizes modes.", "rootRef": "qsg.core.spectral-well"},
-  {"term": "AGQF", "definition": "Anchor-Generating Quaternionic Factorial; a claim-scoped extension lens for resonance wells.", "rootRef": "qsg.ext.agqf"},
+  {"term": "AGQF", "definition": "Anchor-Generating Quaternionic Factorial; a retired historical conjecture retained only for provenance.", "rootRef": "qsg.ext.agqf"},
+  {"term": "Quaternionic special functions", "definition": "Research mathematics covering slice, covariance, noncommutative, operator, and computational questions without a physical-dynamics claim.", "rootRef": "qsg.ext.special-functions"},
   {"term": "Coherence", "definition": "Persistence of phase, orientation, resonance level, or spectral relation under a stated action.", "rootRef": "qsg.ext.coherence"}
 ]

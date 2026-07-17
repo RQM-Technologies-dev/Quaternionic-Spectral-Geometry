@@ -1,5 +1,9 @@
 # Storefront QSG Course Snapshot
 
+> Historical material. Not active RQM Technical Canon v2. Retained for research
+> provenance. See EXP-007 and the
+> [AGQF retirement notice](../../AGQF_RETIREMENT_NOTICE.md).
+
 This directory captures the current Quaternionic Spectral Geometry course material from `RQM-Storefront`.
 
 The flow is intentionally one-way for now:
